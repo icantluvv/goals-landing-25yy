@@ -1,7 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --color-branGreen: #def24a;
+  --color-darkBlue: #475467;
+  --color-lightGray: #e6e4eb;
+}
+
 :root {
-  --background: #ffffff;
+  /* --background: #ffffff; */
   --foreground: #171717;
 }
 
@@ -14,7 +20,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -24,3 +30,47 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer utilities {
+  .bg-gradient-custom {
+    background-color: #c3ff99;
+    background-image: radial-gradient(
+        at 68% 85%,
+        hsla(219, 64%, 71%, 1) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 1% 3%, hsla(216, 16%, 34%, 0.33) 0px, transparent 50%),
+      radial-gradient(at 79% 23%, hsla(166, 69%, 67%, 1) 0px, transparent 50%),
+      radial-gradient(at 3% 59%, hsla(108, 94%, 71%, 0.53) 0px, transparent 50%),
+      radial-gradient(at 90% 88%, hsla(108, 69%, 69%, 1) 0px, transparent 50%),
+      radial-gradient(at 26% 89%, hsla(181, 70%, 73%, 1) 0px, transparent 50%),
+      radial-gradient(at 31% 39%, hsla(182, 65%, 63%, 1) 0px, transparent 50%);
+
+    background-size: 200% 200%;
+    animation: moveBG 10s ease-in-out infinite alternate;
+  }
+
+  @keyframes moveBG {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 50% 50%;
+    }
+    100% {
+      background-position: 100% 0%;
+    }
+  }
+}
+
+
+/* 
+background-color:#99ffca;
+background-image:
+radial-gradient(at 87% 22%, hsla(163,63%,61%,1) 0px, transparent 50%),
+radial-gradient(at 4% 35%, hsla(313,75%,79%,1) 0px, transparent 50%),
+radial-gradient(at 44% 67%, hsla(52,80%,70%,1) 0px, transparent 50%),
+radial-gradient(at 31% 84%, hsla(200,62%,66%,1) 0px, transparent 50%),
+radial-gradient(at 99% 66%, hsla(16,64%,74%,1) 0px, transparent 50%),
+radial-gradient(at 27% 43%, hsla(5,60%,71%,1) 0px, transparent 50%),
+radial-gradient(at 97% 20%, hsla(117,75%,71%,1) 0px, transparent 50%); */
