@@ -4,9 +4,9 @@ import Main from "@/components/main/Main"
 
 export default function LandingPage() {
   return (
-    <div className="flex items-center flex-col gap-y-10">
+    <div className="flex items-center flex-col lg:gap-y-[40px] pt-[64px]">
       <Header />
-      <Main></Main>
+      <Main />
       <Footer />
     </div>
   )

@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className="px-[2vw]">{children}</body>
+      <body>{children}</body>
     </html>
   )
 }

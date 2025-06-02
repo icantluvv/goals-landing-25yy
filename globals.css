@@ -2,8 +2,13 @@
 
 @theme {
   --color-branGreen: #def24a;
+  --color-GreebActive: #c5e000;
   --color-darkBlue: #475467;
   --color-lightGray: #e6e4eb;
+  --color-WhiteText: #f8f8f8;
+  --color-Purple: #bdb4ff;
+  --color-PrimaryBlack: #0c0c0c;
+  --color-BrandDarkBlue: #011627;
 }
 
 :root {
@@ -32,6 +37,15 @@ body {
 }
 
 @layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE и Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari и Opera */
+  }
+
   .bg-gradient-custom {
     background-color: #c3ff99;
     background-image: radial-gradient(
@@ -62,7 +76,6 @@ body {
     }
   }
 }
-
 
 /* 
 background-color:#99ffca;
