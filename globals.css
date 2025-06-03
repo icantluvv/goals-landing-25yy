@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+body {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+span,
+input {
+  font-family: var(--font-inter), sans-serif;
+}
+
+p,
+li,
+a {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
 @theme {
   --color-branGreen: #def24a;
   --color-GreebActive: #c5e000;
@@ -46,6 +68,36 @@ body {
     display: none; /* Chrome, Safari и Opera */
   }
 
+  .bg-gradient-custom2 {
+    background-color: #99ffca;
+    background-image: radial-gradient(
+        at 87% 22%,
+        hsla(163, 63%, 61%, 1) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 4% 35%, hsla(313, 75%, 79%, 1) 0px, transparent 50%),
+      radial-gradient(at 44% 67%, hsla(52, 80%, 70%, 1) 0px, transparent 50%),
+      radial-gradient(at 31% 84%, hsla(200, 62%, 66%, 1) 0px, transparent 50%),
+      radial-gradient(at 99% 66%, hsla(16, 64%, 74%, 1) 0px, transparent 50%),
+      radial-gradient(at 27% 43%, hsla(5, 60%, 71%, 1) 0px, transparent 50%),
+      radial-gradient(at 90% 10%, hsla(117, 75%, 71%, 1) 0px, transparent 50%);
+
+    background-size: 200% 200%;
+    animation: moveBG2 10s ease-in-out infinite alternate;
+  }
+
+  @keyframes moveBG2 {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 50% 50%;
+    }
+    100% {
+      background-position: 100% 0%;
+    }
+  }
+
   .bg-gradient-custom {
     background-color: #c3ff99;
     background-image: radial-gradient(
@@ -62,6 +114,56 @@ body {
 
     background-size: 200% 200%;
     animation: moveBG 10s ease-in-out infinite alternate;
+  }
+
+  .move-slow {
+    animation: move-slow 25s ease-in-out infinite;
+  }
+
+  .move-medium {
+    animation: move-medium 7s ease-in-out infinite;
+  }
+
+  .move-fast {
+    animation: move-fast 5s ease-in-out infinite;
+  }
+
+  @keyframes move-slow {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-500px, 600px);
+    }
+  }
+
+  @keyframes move-medium {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(800px, 600px);
+    }
+  }
+
+  @keyframes move-fast {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(40px, 0);
+    }
+    50% {
+      transform: translate(40px, 40px);
+    }
+    75% {
+      transform: translate(0, 40px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
   }
 
   @keyframes moveBG {

@@ -97,7 +97,10 @@ const AccordionItem = ({
 
 const AskBox = () => {
   return (
-    <div className="flex-1 bg-gradient-custom rounded-[25px] md:rounded-[35px] h-[350px] p-[24px] md:p-[48px] flex flex-col justify-between relative gap-[24px] shadow-md">
+    <div
+      className="flex-1 bg-gradient-custom rounded-[25px] lg:rounded-[35px] md:min-h-[320px] h-[350px] p-[24px] md:p-[48px]
+     flex flex-col justify-between relative gap-[24px] shadow-md"
+    >
       <div className="flex flex-col gap-y-[12px] w-[60%] z-[1000]">
         <h4 className="text-[1.25rem] md:text-[1.5rem] text-WhiteText font-semibold select-none">
           Напишите нам!

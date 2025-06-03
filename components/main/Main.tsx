@@ -7,9 +7,9 @@ import Application from "./components/Application"
 
 const Main = () => {
   return (
-    <main className="w-full flex flex-col gap-y-[40px] md:gap-y-[80px]">
+    <main className="w-full flex flex-col gap-y-[40px] lg:gap-y-[80px]">
       <FirstSection></FirstSection>
-      <div className="flex flex-col gap-y-[40px] md:gap-y-[80px] xl:px-[6.5vw]">
+      <div className="flex flex-col gap-y-[40px] lg:gap-y-[80px] xl:px-[6.5vw]">
         <Solution></Solution>
         <Steps></Steps>
         <Tariff></Tariff>

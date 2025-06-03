@@ -44,21 +44,24 @@ const InputField = ({ placeholder, className = "" }: InputFieldProps) => {
 
 const Application = () => {
   return (
-    <section id="connect" className="md:rounded-[75px] scroll-mt-[100px]">
-      <div className="relative flex justify-end w-full xl:h-[720px] px-[24px] py-[48px] xl:p-[48px] xl:rounded-[35px] xl:shadow-md ">
+    <section id="connect" className="lg:rounded-[75px] scroll-mt-[100px]">
+      <div className="relative flex justify-end w-full lg:h-[720px] px-[24px] py-[48px] lg:p-[48px] lg:rounded-[35px] lg:shadow-md ">
         <Image
           src={map}
           alt="map"
           fill
-          className=" md:rounded-[35px] object-cover"
+          className="xl:rounded-[35px] object-cover"
         />
 
-        <form className="flex flex-col w-full xl:w-[50vw] h-full justify-between gap-[24px] p-[24px] xl:p-[48px] bg-white rounded-[25px] xl:rounded-[35px] z-[1000]">
+        <form
+          className="flex flex-col w-full xl:w-[50vw] h-full justify-between gap-[24px] p-[24px] lg:p-[48px] 
+        bg-white rounded-[25px] lg:rounded-[35px] z-[1000]"
+        >
           <div className="flex flex-col gap-3">
-            <h3 className="text-[1.5rem] xl:text-[2.5rem] font-semibold">
+            <h3 className="text-[1.5rem] lg:text-[2.5rem] font-semibold">
               Оставьте заявку!
             </h3>
-            <p className="text-[1rem] xl:text-[1.5rem]">
+            <p className="text-[1rem] lg:text-[1.5rem]">
               Мы с вами свяжемся для продолжения регистрации
             </p>
           </div>
@@ -73,7 +76,10 @@ const Application = () => {
             <InputField placeholder="ИНН Организации" />
           </div>
 
-          <button className="w-full p-[20px] xl:p-[24px] text-[1.125rem] font-semibold text-WhiteText bg-PrimaryBlack rounded-[48px] active:bg-PrimaryBlack/75 transition-colors">
+          <button
+            className="w-full p-[20px] lg:p-[24px] text-[1.125rem] font-semibold text-WhiteText bg-PrimaryBlack 
+          rounded-[48px] active:bg-PrimaryBlack/75 transition-colors"
+          >
             Отправить
           </button>
         </form>

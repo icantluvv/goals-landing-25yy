@@ -6,7 +6,7 @@ import Link from "next/link"
 const RegularHeader = ({ navLinks, baseButtonStyles }: RegularHeaderProps) => {
   return (
     <header
-      className={`fixed top-0 left-0 h-[64px] w-full px-[10vw] items-center gap-10 z-[5000] hidden lg:flex ${baseButtonStyles} `}
+      className={`fixed top-0 h-[64px] w-[88vw] rounded-[64px] mt-[24px] px-[4vw] items-center gap-[56px] z-[5000] hidden lg:flex ${baseButtonStyles} `}
     >
       <Logo />
       <RegularNavigation navLinks={navLinks} />

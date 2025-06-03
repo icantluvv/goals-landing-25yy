@@ -4,7 +4,6 @@ import React from "react"
 
 import copyright from "@/public/copyright.svg"
 import header_logo from "@/public/header/header_logo.svg"
-import inst from "@/public/footer/inst.svg"
 import vk from "@/public/footer/vk.svg"
 import tg from "@/public/footer/telegram.svg"
 
@@ -24,7 +23,6 @@ const rightLinks = [
 ]
 
 const socialLinks = [
-  { icon: inst, alt: "inst" },
   { icon: tg, alt: "tg" },
   { icon: vk, alt: "vk" }
 ]
