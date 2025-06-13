@@ -19,7 +19,7 @@ const links = [
 
 const rightLinks = [
   { title: "Политика сервиса", href: "/privacy" },
-  { title: "Пользовательское соглашение", href: "/agreement" }
+  { title: "Лицензионное соглашение", href: "/license" }
 ]
 
 const socialLinks = [

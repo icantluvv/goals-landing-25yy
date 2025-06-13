@@ -31,11 +31,8 @@ const Solution = () => (
         Маркетинг, аналитика и лояльность <br /> в одном решении
       </h2>
       <p className="max-w-[85vw] md:max-w-[80vw] text-[1rem] md:text-[1.5rem] text-gray-600">
-        Мост между вашим бизнесом и клиентами. Ваши гости – лояльные
-        инфлюенсеры. <br />
-        Удобная аналитика по предпочтениям и активности. Прогрессивная система
-        лояльности с персональными бонусами. Всё просто, прозрачно и максимально
-        полезно для роста вашего заведения.
+        Мост между вашим бизнесом и клиентами. <br /> Ваши гости – лояльные
+        инфлюенсеры.
       </p>
     </div>
 
@@ -43,7 +40,7 @@ const Solution = () => (
       {solutions.map(({ icon, title, text }, index) => (
         <div
           key={index}
-          className="flex-1 p-6 bg-white rounded-2xl border md:min-h-[200px] lg:min-w-[400px] border-[#eaeaea] text-left flex flex-col items-center lg:items-start"
+          className="flex-1 p-6 bg-white rounded-2xl border md:min-h-[200px] lg:min-w-[400px] xl:min-w-[300px] border-[#eaeaea] text-left flex flex-col items-center lg:items-start"
         >
           <div className="flex items-center gap-[2px] mb-3">
             <Image

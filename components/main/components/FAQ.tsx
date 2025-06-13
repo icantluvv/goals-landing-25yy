@@ -2,8 +2,9 @@
 import Image from "next/image"
 import React from "react"
 import hide_show from "@/public/hide_show.svg"
-import { useAccordionStore } from "@/store/accordionStore"
 import big_logo from "@/public/big_logo.svg"
+import { useAccordionStore } from "@/store/accordionStore"
+import { faqData } from "@/constants/faqData"
 
 const FAQ = () => {
   return (
@@ -12,34 +13,9 @@ const FAQ = () => {
       className="w-full flex flex-col xl:flex-row md:gap-y-[40px] gap-[24px] px-[4vw] xl:px-0 scroll-mt-[100px]"
     >
       <div className="flex flex-col flex-2 gap-y-[12px]">
-        <AccordionItem
-          id={1}
-          question={"У вас остались еще вопросы?"}
-          answer={"Это ответ на ваш вопрос"}
-        />
-
-        <AccordionItem
-          id={2}
-          question={"У вас что не остались еще вопросы?"}
-          answer={"Остались"}
-        />
-
-        <AccordionItem
-          id={3}
-          question={"А у вас остались или не остались?"}
-          answer={"Спасибо"}
-        />
-
-        <AccordionItem
-          id={4}
-          question={"А у вас остались или не остались?"}
-          answer={"Спасибо"}
-        />
-        <AccordionItem
-          id={5}
-          question={"А у вас остались или не остались?"}
-          answer={"Спасибо"}
-        />
+        {faqData.map(({ id, question, answer }) => (
+          <AccordionItem key={id} id={id} question={question} answer={answer} />
+        ))}
       </div>
       <AskBox />
     </section>
@@ -58,7 +34,6 @@ const AccordionItem = ({
   answer: string
 }) => {
   const { openAccordion, setOpenAccordion } = useAccordionStore()
-
   const isOpen = openAccordion === id
 
   const toggleAccordion = () => {
@@ -70,7 +45,7 @@ const AccordionItem = ({
       onClick={toggleAccordion}
       className={`border border-darkBlue/10 rounded-[24px] w-full p-[24px] flex flex-col cursor-pointer  ${
         isOpen ? "gap-y-[24px]" : "gap-y-0"
-      } transition-all duration-300`}
+      } transition-all duration-300 select-none`}
     >
       <button className="flex items-center justify-between flex-1 cursor-pointer">
         <p className="font-semibold text-[1rem] md:text-[1.25rem] text-start cursor-pointer">
@@ -78,18 +53,20 @@ const AccordionItem = ({
         </p>
         <Image
           src={hide_show}
-          alt={"hide_show"}
+          alt="hide_show"
           className={`${
             isOpen ? "rotate-45" : "rotate-0"
           } transition-transform duration-200 w-[24px] h-[24px] md:w-[32x] md:h-[32px] cursor-pointer`}
-        ></Image>
+        />
       </button>
       <div
         className={`${
-          isOpen ? "h-[20px]" : "h-[0px]"
+          isOpen ? "h-auto opacity-100" : "h-0 opacity-0"
         } overflow-hidden transition-all`}
       >
-        <p className="text-[0.875rem] md:text-[1rem]">{answer}</p>
+        <p className="text-[0.875rem] md:text-[1rem] whitespace-pre-line lg:max-w-[95%]">
+          {answer}
+        </p>
       </div>
     </div>
   )
@@ -98,7 +75,7 @@ const AccordionItem = ({
 const AskBox = () => {
   return (
     <div
-      className="flex-1 bg-gradient-custom rounded-[25px] lg:rounded-[35px] md:min-h-[320px] h-[350px] p-[24px] md:p-[48px]
+      className="flex-1 bg-gradient-custom rounded-[25px] lg:rounded-[35px] md:min-h-[320px] xl:min-w-[500px] h-[350px] p-[24px] md:p-[48px]
      flex flex-col justify-between relative gap-[24px] shadow-md"
     >
       <div className="flex flex-col gap-y-[12px] w-[60%] z-[1000]">
@@ -122,9 +99,9 @@ const AskBox = () => {
 
       <Image
         src={big_logo}
-        alt={"big_logo"}
+        alt="big_logo"
         className="absolute w-[110px] h-[110px] md:w-[130px] md:h-[130px] right-[24px] md:right-[48px] top-[12px] md:top-[36px]"
-      ></Image>
+      />
     </div>
   )
 }

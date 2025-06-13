@@ -35,10 +35,10 @@ const FirstSection = () => {
         alt={"screen"}
       ></Image>
 
-      <div className="z-[10] flex flex-col gap-y-[24px] px-[3vw] xl:px-0 py-[100px] items-center justify-between md:justify-start">
+      <div className="z-[10] flex flex-col gap-y-[24px] px-[3vw] xl:px-0 py-[100px] lg:py-[10vh] items-center justify-between md:justify-start">
         <div className="w-full flex flex-col items-center gap-y-[24px]">
-          <h1 className=" text-[3.5rem] leading-18 lg:text-[5rem] font-bold text-WhiteText text-center ">
-            Goals <br /> система лояльности
+          <h1 className="text-[3.5rem] leading-18 xl:text-[5rem] font-bold text-WhiteText text-center ">
+            Cистема лояльности
           </h1>
           <p className="text-[1.25rem] hidden md:flex leading-7 lg:text-[1.5rem] lg:leading-8 text-center w-[80vw] xl:w-[60vw] text-WhiteText">
             Ваши клиенты уже рассказывают о заведениях — пора управлять этим

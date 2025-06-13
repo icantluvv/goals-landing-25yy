@@ -31,8 +31,8 @@ const InputField = ({ placeholder, className = "" }: InputFieldProps) => {
           transition-all duration-200
           ${
             isActive
-              ? "top-[-0.7rem] text-[0.75rem] text-PrimaryBlack"
-              : "top-3 text-[1rem] text-PrimaryBlack/50"
+              ? "top-[-0.7rem] text-[12px] lg:text-[14px] text-PrimaryBlack"
+              : "top-3 text-[14px] lg:text-[16px] text-PrimaryBlack/50"
           }
         `}
       >
@@ -45,7 +45,7 @@ const InputField = ({ placeholder, className = "" }: InputFieldProps) => {
 const Application = () => {
   return (
     <section id="connect" className="lg:rounded-[75px] scroll-mt-[100px]">
-      <div className="relative flex justify-end w-full lg:h-[720px] px-[24px] py-[48px] lg:p-[48px] lg:rounded-[35px] lg:shadow-md ">
+      <div className="relative flex md:justify-center justify-end w-full px-[24px] py-[48px] lg:p-[48px] lg:rounded-[35px] lg:shadow-md ">
         <Image
           src={map}
           alt="map"
@@ -54,31 +54,31 @@ const Application = () => {
         />
 
         <form
-          className="flex flex-col w-full xl:w-[50vw] h-full justify-between gap-[24px] p-[24px] lg:p-[48px] 
+          className="flex flex-col w-full md:w-[50vw] h-full  gap-[24px] p-[24px] lg:p-[32px] 
         bg-white rounded-[25px] lg:rounded-[35px] z-[1000]"
         >
-          <div className="flex flex-col gap-3">
-            <h3 className="text-[1.5rem] lg:text-[2.5rem] font-semibold">
+          <div className="flex flex-col gap-[6px]">
+            <h3 className="text-[24px] lg:text-[42px] font-semibold">
               Оставьте заявку!
             </h3>
-            <p className="text-[1rem] lg:text-[1.5rem]">
+            <p className="text-[14px] lg:text-[16px]">
               Мы с вами свяжемся для продолжения регистрации
             </p>
           </div>
 
-          <div className="flex gap-3">
+          <div className="flex gap-[12px]">
             <InputField placeholder="Телефон" className="flex-1" />
             <InputField placeholder="Почта" className="flex-1" />
           </div>
 
-          <div className="flex flex-col gap-9">
+          <div className="flex flex-col gap-[24px]">
             <InputField placeholder="ФИО" />
             <InputField placeholder="ИНН Организации" />
           </div>
 
           <button
-            className="w-full p-[20px] lg:p-[24px] text-[1.125rem] font-semibold text-WhiteText bg-PrimaryBlack 
-          rounded-[48px] active:bg-PrimaryBlack/75 transition-colors"
+            className="w-full p-[12px] lg:p-[18px] text-[14px] lg:text-[16px] font-semibold text-WhiteText bg-PrimaryBlack 
+          rounded-[48px] active:bg-PrimaryBlack/75 transition-colors cursor-pointer "
           >
             Отправить
           </button>
