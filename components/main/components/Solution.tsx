@@ -36,7 +36,7 @@ const Solution = () => (
       </p>
     </div>
 
-    <div className="flex flex-col xl:flex-row gap-[24px] w-full lg:max-w-[60vw] xl:max-w-[1200px] px-[4vw] lg:px-0 no-scrollbar ">
+    <div className="flex flex-col xl:flex-row gap-[24px] w-full md:w-[70vw] lg:max-w-[60vw] xl:max-w-[1200px] px-[4vw] lg:px-0 no-scrollbar ">
       {solutions.map(({ icon, title, text }, index) => (
         <div
           key={index}

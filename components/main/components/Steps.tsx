@@ -83,7 +83,7 @@ const Steps = () => {
 
           <div className="z-[10] w-full">
             <button
-              className="inline-flex bg-branGreen px-[32px] md:px-[48px] py-[20px] md:py-[24px] rounded-[48px] cursor-pointer 
+              className="inline-flex bg-branGreen px-[32px] md:px-[48px] py-[20px] md:py-[24px] rounded-[48px]  
             active:bg-GreebActive"
             >
               <span className="text-[1rem] md:text-[1.25rem] font-semibold text-PrimaryBlack select-none">

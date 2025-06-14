@@ -39,13 +39,13 @@ const LinksGroup = ({
     <div className="flex flex-col xl:flex-row gap-x-[100px]">
       <div className="flex flex-col gap-y-3">
         {items.map(({ title, href }) => (
-          <a
+          <Link
             key={title}
             href={href}
-            className="hover:text-PrimaryBlack transition-colors"
+            className="hover:text-PrimaryBlack "
           >
             {title}
-          </a>
+          </Link>
         ))}
       </div>
     </div>

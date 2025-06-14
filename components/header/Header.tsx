@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <>
       <RegularHeader navLinks={navLinks} baseButtonStyles={baseButtonStyles} />
-      <MobileHeader navLinks={navLinks} baseButtonStyles={baseButtonStyles} />
+      <MobileHeader navLinks={navLinks} />
     </>
   )
 }

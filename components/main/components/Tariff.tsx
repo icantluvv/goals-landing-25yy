@@ -98,7 +98,7 @@ const Tariff = () => {
             <div>
               <button
                 className="bg-darkBlue text-white text-[1rem] font-semibold px-[24px] md:px-[48px] py-[16px] md:py-[24px] rounded-[48px]
-              active:bg-darkBlue/75 transition-colors cursor-pointer select-none"
+              active:bg-darkBlue/75 select-none"
               >
                 Подключить
               </button>

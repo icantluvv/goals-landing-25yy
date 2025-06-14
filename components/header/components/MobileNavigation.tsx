@@ -8,9 +8,9 @@ const MobileNavigation = ({ navLinks }: MobileNavigationProps) => {
 
   return (
     <nav
-      className={`w-full h-full bg-white fixed left-0 top-[64px] z-[9000] flex flex-col items-start 
-        px-[4vw] gap-6 pt-5 lg:hidden transition-transform  ${
-          openHeader ? "translate-x-0" : "translate-x-full"
+      className={`w-[80vw] h-full bg-white fixed left-0 top-0 z-[9000] flex flex-col items-start 
+        px-[4vw] gap-6 pt-[20vh] lg:hidden transition-transform ${
+          openHeader ? "translate-x-0" : "translate-x-[-100%]"
         }`}
     >
       {navLinks.map(({ id, label }) => (

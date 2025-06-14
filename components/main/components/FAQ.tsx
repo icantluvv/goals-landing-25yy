@@ -48,7 +48,7 @@ const AccordionItem = ({
       } transition-all duration-300 select-none`}
     >
       <button className="flex items-center justify-between flex-1 cursor-pointer">
-        <p className="font-semibold text-[1rem] md:text-[1.25rem] text-start cursor-pointer">
+        <p className="font-semibold w-[85%] text-[1rem] md:text-[1.25rem] text-start cursor-pointer">
           {question}
         </p>
         <Image
@@ -91,7 +91,7 @@ const AskBox = () => {
       <div className="w-full z-[1000] flex">
         <button
           className="w-full py-[20px] md:py-[24px] text-[1rem] rounded-[25px] bg-white text-darkBlue font-semibold cursor-pointer 
-        active:bg-darkBlue/40 active:text-WhiteText transition-colors select-none"
+        active:bg-darkBlue/40 active:text-WhiteText select-none"
         >
           Задать вопрос в Goals
         </button>

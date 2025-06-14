@@ -44,45 +44,48 @@ const InputField = ({ placeholder, className = "" }: InputFieldProps) => {
 
 const Application = () => {
   return (
-    <section id="connect" className="lg:rounded-[75px] scroll-mt-[100px]">
-      <div className="relative flex md:justify-center justify-end w-full px-[24px] py-[48px] lg:p-[48px] lg:rounded-[35px] lg:shadow-md ">
+    <section
+      id="connect"
+      className="lg:rounded-[75px] scroll-mt-[100px] flex flex-col lg:flex-row gap-[40px] lg:gap-[80px] mb-[40px] lg:mb-[80px]"
+    >
+      <form className="flex flex-1 w-full md: px-[4vw] flex-col gap-[24px]">
+        <div className="flex flex-col gap-[6px]">
+          <h3 className="text-[24px] lg:text-[42px] font-semibold">
+            Оставьте заявку!
+          </h3>
+          <p className="text-[14px] lg:text-[16px]">
+            Мы с вами свяжемся для продолжения регистрации
+          </p>
+        </div>
+
+        <div className="flex  gap-[12px]">
+          <InputField placeholder="Телефон" className="flex-1" />
+          <InputField placeholder="Почта" className="flex-1" />
+        </div>
+
+        <div className="flex flex-col gap-[24px]">
+          <InputField placeholder="ФИО" />
+          <InputField placeholder="ИНН Организации" />
+        </div>
+
+        <div>
+          <button
+            className="px-[48px] py-[18px] font-semibold text-WhiteText bg-PrimaryBlack 
+          rounded-[48px] active:bg-PrimaryBlack/75   "
+          >
+            Отправить
+          </button>
+        </div>
+      </form>
+
+      <div className="hidden xl:flex xl:w-1/2 h-[70vh] relative p-[48px]">
         <Image
           src={map}
           alt="map"
           fill
+          objectFit="cover"
           className="xl:rounded-[35px] object-cover"
         />
-
-        <form
-          className="flex flex-col w-full md:w-[50vw] h-full  gap-[24px] p-[24px] lg:p-[32px] 
-        bg-white rounded-[25px] lg:rounded-[35px] z-[1000]"
-        >
-          <div className="flex flex-col gap-[6px]">
-            <h3 className="text-[24px] lg:text-[42px] font-semibold">
-              Оставьте заявку!
-            </h3>
-            <p className="text-[14px] lg:text-[16px]">
-              Мы с вами свяжемся для продолжения регистрации
-            </p>
-          </div>
-
-          <div className="flex gap-[12px]">
-            <InputField placeholder="Телефон" className="flex-1" />
-            <InputField placeholder="Почта" className="flex-1" />
-          </div>
-
-          <div className="flex flex-col gap-[24px]">
-            <InputField placeholder="ФИО" />
-            <InputField placeholder="ИНН Организации" />
-          </div>
-
-          <button
-            className="w-full p-[12px] lg:p-[18px] text-[14px] lg:text-[16px] font-semibold text-WhiteText bg-PrimaryBlack 
-          rounded-[48px] active:bg-PrimaryBlack/75 transition-colors cursor-pointer "
-          >
-            Отправить
-          </button>
-        </form>
       </div>
     </section>
   )

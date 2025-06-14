@@ -22,6 +22,13 @@ a {
   font-family: var(--font-montserrat), sans-serif;
 }
 
+button,
+a {
+  cursor: pointer;
+  transition: all;
+  transition-duration: 200ms;
+}
+
 @theme {
   --color-branGreen: #def24a;
   --color-GreebActive: #c5e000;

@@ -1,5 +1,5 @@
-import { useNavigationStateStore } from "@/store/navigationStore"
 import Link from "next/link"
+import { useNavigationStateStore } from "@/store/navigationStore"
 import { useScrollSpy } from "@/lib/useScrollSpy"
 
 const sections = ["about", "forbusiness", "tariffs", "FAQ", "connect"]
@@ -20,7 +20,7 @@ const RegularNavigation = ({ navLinks }: RegularNavigationProps) => {
               chooseNavElement === id
                 ? "text-PrimaryBlack"
                 : "text-PrimaryBlack/50"
-            } text-[0.875rem] transition-colors cursor-pointer hover:text-PrimaryBlack`}
+            } text-[0.875rem]  hover:text-PrimaryBlack`}
           >
             {label}
           </Link>
