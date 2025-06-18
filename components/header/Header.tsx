@@ -5,11 +5,11 @@ import RegularHeader from "./components/RegularHeader"
 
 const baseButtonStyles = "backdrop-blur-md bg-white/30 "
 const navLinks = [
-  { id: "#about", label: "О нас" },
-  { id: "#forbusiness", label: "Бизнесу" },
-  { id: "#tariffs", label: "Тарифы" },
-  { id: "#FAQ", label: "FAQ" },
-  { id: "#connect", label: "Связаться" }
+  { id: "/#about", label: "О нас" },
+  { id: "/#forbusiness", label: "Бизнесу" },
+  { id: "/#tariffs", label: "Тарифы" },
+  { id: "/#FAQ", label: "FAQ" },
+  { id: "/#connect", label: "Связаться" }
 ]
 
 const Header = () => {

@@ -2,6 +2,7 @@ import React from "react"
 import like from "@/public/like.png"
 import Image from "next/image"
 import trend from "@/public/trend.svg"
+import Link from "next/link"
 
 const steps = [
   {
@@ -82,14 +83,13 @@ const Steps = () => {
           </span>
 
           <div className="z-[10] w-full">
-            <button
+            <Link
+              href={"/#connect"}
               className="inline-flex bg-branGreen px-[32px] md:px-[48px] py-[20px] md:py-[24px] rounded-[48px]  
             active:bg-GreebActive"
             >
-              <span className="text-[1rem] md:text-[1.25rem] font-semibold text-PrimaryBlack select-none">
-                Подключить
-              </span>
-            </button>
+              Подключить
+            </Link>
           </div>
         </div>
       </div>

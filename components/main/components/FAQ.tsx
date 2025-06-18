@@ -2,9 +2,9 @@
 import Image from "next/image"
 import React from "react"
 import hide_show from "@/public/hide_show.svg"
-import big_logo from "@/public/big_logo.svg"
 import { useAccordionStore } from "@/store/accordionStore"
 import { faqData } from "@/constants/faqData"
+import AskQuestion from "./AskQuestion"
 
 const FAQ = () => {
   return (
@@ -17,7 +17,7 @@ const FAQ = () => {
           <AccordionItem key={id} id={id} question={question} answer={answer} />
         ))}
       </div>
-      <AskBox />
+      <AskQuestion />
     </section>
   )
 }
@@ -68,40 +68,6 @@ const AccordionItem = ({
           {answer}
         </p>
       </div>
-    </div>
-  )
-}
-
-const AskBox = () => {
-  return (
-    <div
-      className="flex-1 bg-gradient-custom rounded-[25px] lg:rounded-[35px] md:min-h-[320px] xl:min-w-[500px] h-[350px] p-[24px] md:p-[48px]
-     flex flex-col justify-between relative gap-[24px] shadow-md"
-    >
-      <div className="flex flex-col gap-y-[12px] w-[60%] z-[1000]">
-        <h4 className="text-[1.25rem] md:text-[1.5rem] text-WhiteText font-semibold select-none">
-          Напишите нам!
-        </h4>
-        <p className="text-WhiteText text-[0.875rem] md:text-[1rem] select-none">
-          Вы можете задать свой вопрос нам лично! Отправьте письмо,
-          а мы постараемся ответить
-        </p>
-      </div>
-
-      <div className="w-full z-[1000] flex">
-        <button
-          className="w-full py-[20px] md:py-[24px] text-[1rem] rounded-[25px] bg-white text-darkBlue font-semibold cursor-pointer 
-        active:bg-darkBlue/40 active:text-WhiteText select-none"
-        >
-          Задать вопрос в Goals
-        </button>
-      </div>
-
-      <Image
-        src={big_logo}
-        alt="big_logo"
-        className="absolute w-[110px] h-[110px] md:w-[130px] md:h-[130px] right-[24px] md:right-[48px] top-[12px] md:top-[36px]"
-      />
     </div>
   )
 }

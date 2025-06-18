@@ -8,11 +8,11 @@ import vk from "@/public/footer/vk.svg"
 import tg from "@/public/footer/telegram.svg"
 
 const links = [
-  { title: "О нас", href: "#about" },
-  { title: "Бизнесу", href: "#forbusiness" },
-  { title: "Тарифы", href: "#tariffs" },
-  { title: "FAQ", href: "#FAQ" },
-  { title: "Связаться", href: "#connect" },
+  { title: "О нас", href: "/#about" },
+  { title: "Бизнесу", href: "/#forbusiness" },
+  { title: "Тарифы", href: "/#tariffs" },
+  { title: "FAQ", href: "/#FAQ" },
+  { title: "Связаться", href: "/#connect" },
   { title: "Новости", href: "/news" },
   { title: "Пользователям Goals", href: "/GoalsForUser" }
 ]
@@ -39,11 +39,7 @@ const LinksGroup = ({
     <div className="flex flex-col xl:flex-row gap-x-[100px]">
       <div className="flex flex-col gap-y-3">
         {items.map(({ title, href }) => (
-          <Link
-            key={title}
-            href={href}
-            className="hover:text-PrimaryBlack "
-          >
+          <Link key={title} href={href} className="hover:text-PrimaryBlack ">
             {title}
           </Link>
         ))}
