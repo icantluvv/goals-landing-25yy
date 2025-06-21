@@ -23,8 +23,8 @@ const rightLinks = [
 ]
 
 const socialLinks = [
-  { icon: tg, alt: "tg" },
-  { icon: vk, alt: "vk" }
+  { icon: tg, alt: "tg", url: "https://t.me/dogoals" },
+  { icon: vk, alt: "vk", url: "https://vk.com/dogoals" }
 ]
 
 const LinksGroup = ({
@@ -49,9 +49,9 @@ const LinksGroup = ({
 )
 
 const Footer = () => (
-  <footer className="w-full flex-col px-[5vw] lg:px-[15vw] text-PrimaryBlack/50 flex py-10 gap-8 lg:gap-16 text-[0.875rem] border-t border-PrimaryBlack/10">
-    <div className="flex flex-wrap justify-between items-start w-full gap-8 lg:gap-16">
-      <Link href="/" className="w-full lg:w-auto flex">
+  <footer className="w-full flex-col px-[4vw] xl:px-[15vw] text-PrimaryBlack/50 flex py-10 gap-8 xl:gap-16 text-[0.875rem] border-t border-PrimaryBlack/10">
+    <div className="flex flex-wrap justify-between items-start w-full gap-8 xl:gap-16">
+      <Link href="/" className="w-full xl:w-auto flex">
         <Image
           src={header_logo}
           alt="footer_logo"
@@ -77,12 +77,12 @@ const Footer = () => (
       </div>
 
       <div className="flex items-center gap-3">
-        {socialLinks.map(({ icon, alt }, i) => (
+        {socialLinks.map(({ icon, alt, url }, i) => (
           <React.Fragment key={alt}>
             {i > 0 && (
               <div className="w-[1px] h-[20px] bg-PrimaryBlack/15"></div>
             )}
-            <Link href="">
+            <Link href={url}>
               <Image
                 src={icon}
                 alt={alt}

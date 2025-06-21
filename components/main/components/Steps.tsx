@@ -23,7 +23,7 @@ const Steps = () => {
   return (
     <section
       id="steps"
-      className="flex w-full gap-[24px] flex-row py-2 overflow-x-auto no-scrollbar no-scrollbar px-[4vw] xl:px-0"
+      className="flex w-full gap-[24px] flex-row py-2 overflow-x-auto px-[4vw] no-scrollbar xl:px-0"
     >
       <div className="flex-1">
         <div
@@ -44,7 +44,7 @@ const Steps = () => {
         </div>
       </div>
 
-      <div className="flex-2 flex xl:flex-wrap gap-[24px]">
+      <div className="flex-2 flex xl:flex-wrap gap-[24px] ">
         {steps.map((step, index) => (
           <div
             key={index}
@@ -85,7 +85,7 @@ const Steps = () => {
           <div className="z-[10] w-full">
             <Link
               href={"/#connect"}
-              className="inline-flex bg-branGreen px-[32px] md:px-[48px] py-[20px] md:py-[24px] rounded-[48px]  
+              className="inline-flex bg-branGreen px-[32px] font-semibold md:px-[48px] py-[20px] md:py-[24px] rounded-[48px]  
             active:bg-GreebActive"
             >
               Подключить

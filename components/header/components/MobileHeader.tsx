@@ -1,20 +1,18 @@
 import { useMobileHeaderStore } from "@/store/mobileHeaderStore"
 import MobileNavigation from "./MobileNavigation"
+import { useBodyLock } from "@/hooks/useBodyLockScroll"
 
 const MobileHeader = ({ navLinks }: MobileHeaderProps) => {
   const openHeader = useMobileHeaderStore((state) => state.openHeader)
   const setOpenHeader = useMobileHeaderStore((state) => state.setOpenHeader)
 
+  useBodyLock(openHeader)
+
   return (
     <>
       <header
-        className={`h-[64px] fixed left-0 top-0 w-full z-[9000] px-[4vw] flex  justify-end items-center lg:hidden`}
+        className={`h-[64px] fixed left-0 top-0 w-full z-[9000] px-[4vw] flex justify-end items-center lg:hidden`}
       >
-        {/* <Image
-          src={header_logo}
-          alt={"header_logo"}
-          className="h-[44px] w-auto"
-        ></Image> */}
         <button
           onClick={() => setOpenHeader()}
           className="w-[54px] h-[54px] flex flex-col items-center justify-center gap-[8px] relative"
@@ -31,6 +29,14 @@ const MobileHeader = ({ navLinks }: MobileHeaderProps) => {
           />
         </button>
       </header>
+
+      <div
+        className={`fixed inset-0 bg-black/60 z-[8000] transition-opacity duration-300 ${
+          openHeader ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setOpenHeader()}
+      />
+
       <MobileNavigation navLinks={navLinks} />
     </>
   )

@@ -52,11 +52,9 @@ const FirstSection = () => {
           </Link>
         </div>
       </div>
-      <Image
-        src={goals}
-        alt={"goals"}
-        className="lg:w-[100vw] max-w-none z-10"
-      />
+      <div className="w-[100vw] max-w-none z-10">
+        <Image src={goals} alt={"goals"} className="scale-150" />
+      </div>
     </section>
   )
 }

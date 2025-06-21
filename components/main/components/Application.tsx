@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import map from "@/public/map.svg"
+import phone from "@/public/phone.png"
 
 type InputFieldProps = {
   placeholder: string
@@ -46,10 +46,10 @@ const Application = () => {
   return (
     <section
       id="connect"
-      className="lg:rounded-[75px] scroll-mt-[100px] flex flex-col lg:flex-row gap-[40px] lg:gap-[80px] mb-[40px] lg:mb-[80px]"
+      className="scroll-mt-[100px] flex flex-col xl:flex-row justify-center w-full items-center lg:max-w-[60vw] xl:max-w-[1200px] xl:gap-[80px] mb-[40px] xl:mb-[80px] px-[4vw] lg:px-0"
     >
-      <form className="flex flex-1 w-full md: px-[4vw] flex-col gap-[24px]">
-        <div className="flex flex-col gap-[6px]">
+      <form className="flex w-full  md:max-w-[70vw] lg:max-w-auto flex-col items-center xl:items-start gap-[24px]">
+        <div className="flex flex-col text-center xl:text-start gap-[6px]">
           <h3 className="text-[24px] lg:text-[42px] font-semibold">
             Оставьте заявку!
           </h3>
@@ -58,12 +58,12 @@ const Application = () => {
           </p>
         </div>
 
-        <div className="flex  gap-[12px]">
+        <div className="flex w-full gap-[48px]">
           <InputField placeholder="Телефон" className="flex-1" />
           <InputField placeholder="Почта" className="flex-1" />
         </div>
 
-        <div className="flex flex-col gap-[24px]">
+        <div className="flex w-full flex-col gap-[24px]">
           <InputField placeholder="ФИО" />
           <InputField placeholder="ИНН Организации" />
         </div>
@@ -78,14 +78,8 @@ const Application = () => {
         </div>
       </form>
 
-      <div className="hidden xl:flex xl:w-1/2 h-[70vh] relative p-[48px]">
-        <Image
-          src={map}
-          alt="map"
-          fill
-          objectFit="cover"
-          className="xl:rounded-[35px] object-cover"
-        />
+      <div className="hidden xl:flex">
+        <Image src={phone} width={358} height={728} alt="phone" />
       </div>
     </section>
   )

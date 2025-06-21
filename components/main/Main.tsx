@@ -8,9 +8,9 @@ import MessageModal from "./components/MessageModal"
 
 const Main = () => {
   return (
-    <main className="w-full flex flex-col gap-y-[40px] lg:gap-y-[80px] items-center">
+    <main className="w-full flex flex-col gap-y-[40px] lg:gap-y-[80px] ">
       <FirstSection></FirstSection>
-      <div className="flex flex-col gap-y-[40px] lg:gap-y-[80px] xl:px-[6.5vw]">
+      <div className="flex flex-col gap-y-[40px] lg:gap-y-[80px] lg:items-center xl:px-[6.5vw]">
         <Solution></Solution>
         <Steps></Steps>
         <Tariff></Tariff>

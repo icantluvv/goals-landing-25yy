@@ -14,14 +14,13 @@ const MessageModal = () => {
           </h5>
           <input
             type="email"
-            className="border-[1.5px] border-lightGray  rounded-[12px] p-[12px]"
+            className="border-[1.5px] border-lightGray rounded-[12px] p-[12px] focus:outline-none"
             placeholder="Ваша почта"
           />
+
           <textarea
-            className="resize-none placeholder:text-[16px] rounded-[12px] border-[1.5px] h-[200px] border-lightGray p-[12px]"
+            className="resize-none placeholder:text-[16px] rounded-[12px] border-[1.5px] h-[200px] border-lightGray p-[12px] focus:outline-none"
             placeholder="Ваш вопрос"
-            name=""
-            id=""
           ></textarea>
           <div className="flex w-full justify-end">
             <button
