@@ -53,7 +53,7 @@ const FirstSection = () => {
         </div>
       </div>
       <div className="w-[100vw] max-w-none z-10">
-        <Image src={goals} alt={"goals"} className="scale-150" />
+        <Image src={goals} alt={"goals"} className="scale-150 md:scale-100" />
       </div>
     </section>
   )
