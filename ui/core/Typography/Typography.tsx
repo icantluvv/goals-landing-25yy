@@ -2,46 +2,72 @@ import React from "react"
 import clsx from "clsx"
 
 const variantsTypography = {
-  family: {
-    default: "font-montserrat"
-  },
-  variant: {
-    h1: "text-4xl font-bold",
-    h2: "text-3xl font-semibold",
-    h3: "text-2xl font-medium",
-    h4: "text-xl font-medium",
-    h5: "text-lg font-medium",
-    p: "text-base",
-    span: "text-sm"
-  }
+    family: {
+        default: "font-inter",
+        inter: "font-inter",
+        poppins: "font-poppins"
+    },
+
+    color: {
+        white: "text-white",
+        black: "text-PrimaryBlack"
+    },
+
+    center: "flex w-full justify-center items-center text-center",
+
+    variant: {
+        h1: "text-5xl lg:text-[80px] font-bold font-inter",
+        h2: "text-4xl lg:text-[56px] font-bold font-inter",
+        h3: "text-3xl lg:text-[52px] font-bold font-inter",
+        h4: "text-2xl lg:text-5xl font-bold font-inter",
+        h5: "text-xl lg:text-[32px] font-bold font-inter",
+        h6: "text-lg lg:text-2xl font-bold font-inter",
+        accent: "text-lg lg:text-2xl font-poppins",
+        p: "text-xs lg:text-base font-poppins ",
+        button: "text-base lg:text-xl font-poppins font-semibold",
+        custom: "font-poppins",
+        span: ""
+    }
 } as const
 
 type TypographyVariants = keyof typeof variantsTypography.variant
 
 type TypographyProps = {
-  children: React.ReactNode
-  className?: string
-  variants: TypographyVariants
-  as?: keyof React.JSX.IntrinsicElements
+    children: React.ReactNode
+    className?: string
+    color?: keyof typeof variantsTypography.color
+    center?: boolean
+    variants: TypographyVariants
+    as?: keyof React.JSX.IntrinsicElements
 }
 
-const baseTypographyStyles = "text-black"
+const baseTypographyStyles = "text-pretty"
 
-function Typography({ children, className, variants, as }: TypographyProps) {
-  const Tag = as || variants
+function Typography({ children, className, variants, color, center }: TypographyProps) {
+    const Tag: keyof React.JSX.IntrinsicElements = (() => {
+        if (variants === "accent" || variants === "custom" || variants === "button") {
+            return "p"
+        }
+        if (variants.startsWith("h") && !isNaN(Number(variants[1]))) {
+            return variants as keyof React.JSX.IntrinsicElements
+        }
+        return "p"
+    })()
 
-  return (
-    <Tag
-      className={clsx(
-        baseTypographyStyles,
-        variantsTypography.family.default,
-        variantsTypography.variant[variants],
-        className
-      )}
-    >
-      {children}
-    </Tag>
-  )
+    return (
+        <Tag
+            className={clsx(
+                baseTypographyStyles,
+                variantsTypography.family.default,
+                variantsTypography.variant[variants],
+                color && variantsTypography.color[color],
+                center && variantsTypography.center,
+                className
+            )}
+        >
+            {children}
+        </Tag>
+    )
 }
 
 export default Typography
