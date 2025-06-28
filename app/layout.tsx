@@ -14,7 +14,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={`${inter.variable} ${montserrat.variable}`}>
-      <body className="no-scrollbar">{children}</body>
+      <body className="no-scrollbar">
+      <main>
+      {children}
+
+      </main>
+      </body>
     </html>
   )
 }

@@ -1,5 +1,5 @@
-import Footer from "@/components/footer/Footer"
-import Header from "@/components/header/Header"
+import Footer from "@/app/(public)/(landing)/components/Footer"
+import Header from "@/app/(public)/(landing)/components/Header"
 import React from "react"
 
 import { extractAndParseLicense } from "@/scripts/generateLicense"

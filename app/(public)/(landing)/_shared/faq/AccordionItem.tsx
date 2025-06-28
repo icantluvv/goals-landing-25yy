@@ -1,28 +1,8 @@
 "use client"
-import Image from "next/image"
-import React from "react"
-import hide_show from "@/public/hide_show.svg"
+
 import { useAccordionStore } from "@/store/accordionStore"
-import { faqData } from "@/constants/faqData"
-import AskQuestion from "./AskQuestion"
-
-const FAQ = () => {
-  return (
-    <section
-      id="FAQ"
-      className="w-full flex flex-col xl:flex-row md:gap-y-[40px] gap-[24px] px-[4vw] xl:px-0 scroll-mt-[100px]"
-    >
-      <div className="flex flex-col flex-2 gap-y-[12px]">
-        {faqData.map(({ id, question, answer }) => (
-          <AccordionItem key={id} id={id} question={question} answer={answer} />
-        ))}
-      </div>
-      <AskQuestion />
-    </section>
-  )
-}
-
-export default FAQ
+import Image from "next/image"
+import hide_show from "@/public/hide_show.svg"
 
 const AccordionItem = ({
   id,
@@ -71,3 +51,5 @@ const AccordionItem = ({
     </div>
   )
 }
+
+export default AccordionItem

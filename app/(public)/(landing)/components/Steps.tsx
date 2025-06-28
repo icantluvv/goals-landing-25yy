@@ -84,7 +84,7 @@ const Steps = () => {
 
           <div className="z-[10] w-full">
             <Link
-              href={"/#connect"}
+              href={"/public#connect"}
               className="inline-flex bg-branGreen px-[32px] font-semibold md:px-[48px] py-[20px] md:py-[24px] rounded-[48px]  
             active:bg-GreebActive"
             >

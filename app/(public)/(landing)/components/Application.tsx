@@ -30,10 +30,10 @@ const InputField = ({ placeholder, className = "" }: InputFieldProps) => {
           absolute z-[-1] left-0
           transition-all duration-200
           ${
-            isActive
-              ? "top-[-0.7rem] text-[12px] lg:text-[14px] text-PrimaryBlack"
-              : "top-3 text-[14px] lg:text-[16px] text-PrimaryBlack/50"
-          }
+          isActive
+            ? "top-[-0.7rem] text-[12px] lg:text-[14px] text-PrimaryBlack"
+            : "top-3 text-[14px] lg:text-[16px] text-PrimaryBlack/50"
+        }
         `}
       >
         {placeholder}
@@ -46,15 +46,16 @@ const Application = () => {
   return (
     <section
       id="connect"
-      className="scroll-mt-[100px] flex flex-col xl:flex-row justify-center w-full items-center lg:max-w-[60vw] xl:max-w-[1200px] xl:gap-[80px] mb-[40px] xl:mb-[80px] px-[4vw] lg:px-0"
+      className="scroll-mt-[100px] relaive flex flex-col xl:flex-row w-full items-center lg:max-w-[60vw] xl:max-w-[1200px] justify-start xl:gap-[80px] mb-[40px] xl:mb-[80px] px-[4vw] lg:px-0"
     >
-      <form className="flex w-full  md:max-w-[70vw] lg:max-w-auto flex-col items-center xl:items-start gap-[24px]">
+      <form
+        className="flex w-full  md:max-w-[70vw] lg:max-w-auto flex-col items-center xl:items-start xl:w-full gap-[24px]">
         <div className="flex flex-col text-center xl:text-start gap-[6px]">
           <h3 className="text-[24px] lg:text-[42px] font-semibold">
             Оставьте заявку!
           </h3>
           <p className="text-[14px] lg:text-[16px]">
-            Мы с вами свяжемся для продолжения регистрации
+            Мы с вами свяжемся для продолжения регистрации
           </p>
         </div>
 
@@ -78,9 +79,10 @@ const Application = () => {
         </div>
       </form>
 
-      <div className="hidden xl:flex">
-        <Image src={phone} width={358} height={728} alt="phone" />
+      <div className="hidden xl:flex w-1/2 justify-center relative">
+        <Image src={phone} width={358} height={728} className="absolute top-[-10rem] right-0 " alt="phone" />
       </div>
+
     </section>
   )
 }

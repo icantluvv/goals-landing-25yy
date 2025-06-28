@@ -1,7 +1,7 @@
 import Image from "next/image"
 import header_logo from "@/public/header/header_logo.svg"
-import RegularNavigation from "./RegularNavigation"
 import Link from "next/link"
+import RegularNavigation from "@/app/(public)/(landing)/_shared/header/RegularNavigation"
 
 const RegularHeader = ({ navLinks, baseButtonStyles }: RegularHeaderProps) => {
   return (
@@ -18,7 +18,7 @@ export default RegularHeader
 
 const Logo = () => {
   return (
-    <Link className={` gap-x-3 `} href={"/"}>
+    <Link className={` gap-x-3 `} href={"/public"}>
       <Image src={header_logo} className="h-[50px] w-auto" alt="logo" />
     </Link>
   )

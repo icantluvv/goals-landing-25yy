@@ -28,9 +28,9 @@ const socialLinks = [
 ]
 
 const LinksGroup = ({
-  title,
-  items
-}: {
+                      title,
+                      items
+                    }: {
   title: string
   items: { title: string; href: string }[]
 }) => (
@@ -49,9 +49,10 @@ const LinksGroup = ({
 )
 
 const Footer = () => (
-  <footer className="w-full flex-col px-[4vw] xl:px-[15vw] text-PrimaryBlack/50 flex py-10 gap-8 xl:gap-16 text-[0.875rem] border-t border-PrimaryBlack/10">
+  <footer
+    className="w-full z-[8000] bg-white flex-col px-[4vw] xl:px-[15vw] text-PrimaryBlack/50 flex py-10 gap-8 xl:gap-16 text-[0.875rem] border-t border-PrimaryBlack/10">
     <div className="flex flex-wrap justify-between items-start w-full gap-8 xl:gap-16">
-      <Link href="/" className="w-full xl:w-auto flex">
+      <Link href="/public" className="w-full xl:w-auto flex">
         <Image
           src={header_logo}
           alt="footer_logo"
