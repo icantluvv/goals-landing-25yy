@@ -16,7 +16,7 @@ const Feature = ({ icon, title, text }: FeatureProps) => {
                     alt={title}
                     className="w-[32px] h-[32px] md:w-[48px] md:h-[48px]"
                 />
-                <Typography className="text-center lg:text-start" variants="h6">
+                <Typography color="black" className="text-center lg:text-start" variants="h6">
                     {title}
                 </Typography>
             </div>

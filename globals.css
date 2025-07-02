@@ -55,7 +55,7 @@ a {
 }
 
 :root {
-    /* --background: #ffffff; */
+    --background: #ffffff;
     --foreground: #171717;
 }
 
@@ -68,8 +68,8 @@ a {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #000000;
-        --foreground: #ededed;
+        --background: #ffffff;
+        --foreground: #000000;
     }
 }
 

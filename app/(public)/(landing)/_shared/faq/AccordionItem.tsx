@@ -29,7 +29,7 @@ const AccordionItem = ({
             } transition-all duration-300 select-none`}
         >
             <button className="flex items-center justify-between flex-1 cursor-pointer">
-                <Typography className="max-w-[85%] text-start" variants="button">
+                <Typography color="black" className="max-w-[85%] text-start" variants="button">
                     {question}
                 </Typography>
                 <Image
@@ -46,7 +46,11 @@ const AccordionItem = ({
                     isOpen ? "h-auto opacity-100" : "h-0 opacity-0"
                 } overflow-hidden transition-all`}
             >
-                <Typography className="whitespace-pre-line lg:max-w-[95%]" variants="p">
+                <Typography
+                    color="black"
+                    className="whitespace-pre-line lg:max-w-[95%]"
+                    variants="p"
+                >
                     {answer}
                 </Typography>
             </div>

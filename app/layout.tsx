@@ -3,23 +3,20 @@ import "@/globals.css"
 import { montserrat, inter } from "@/public/fonts/fonts"
 
 export const metadata: Metadata = {
-  title: "Goals",
-  description: ""
+    title: "Goals",
+    description: ""
 }
 
 export default function RootLayout({
-  children
+    children
 }: Readonly<{
-  children: React.ReactNode
+    children: React.ReactNode
 }>) {
-  return (
-    <html lang="ru" className={`${inter.variable} ${montserrat.variable}`}>
-      <body className="no-scrollbar">
-      <main>
-      {children}
-
-      </main>
-      </body>
-    </html>
-  )
+    return (
+        <html lang="ru" className={`${inter.variable} ${montserrat.variable}`}>
+            <body className="no-scrollbar">
+                <main>{children}</main>
+            </body>
+        </html>
+    )
 }

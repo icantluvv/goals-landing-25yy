@@ -27,7 +27,7 @@ const Steps = () => {
                         ></Image>
                     </div>
 
-                    <Typography color="white" variants="h3">
+                    <Typography color="black" variants="h3">
                         Всего несколько шагов до старта!
                     </Typography>
                 </div>

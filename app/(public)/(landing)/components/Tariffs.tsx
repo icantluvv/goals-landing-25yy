@@ -11,7 +11,7 @@ const Tariffs = () => {
             className="w-full flex flex-col items-center gap-y-[40px] lg:px-0 scroll-mt-[100px]"
         >
             <div className="flex flex-col items-center gap-y-[24px] text-center px-[3vw] xl:px-0">
-                <Typography variants="h2">
+                <Typography color="black" variants="h2">
                     Выберите тариф <br />
                     для своего бизнеса
                 </Typography>

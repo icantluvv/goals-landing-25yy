@@ -9,25 +9,25 @@ import Application from "@/app/(public)/(landing)/components/Application"
 import MessageModal from "@/app/(public)/(landing)/components/MessageModal"
 
 export default function LandingPage() {
-  return (
-    <div className="flex items-center flex-col">
-      <Header />
+    return (
+        <div className="flex items-center flex-col bg-white">
+            <Header />
 
-      <div className="w-full  flex flex-col gap-y-[40px] lg:gap-y-[80px]">
-        <FirstSection></FirstSection>
+            <div className="w-full  flex flex-col gap-y-[40px] lg:gap-y-[80px]">
+                <FirstSection></FirstSection>
 
-        <div className="flex flex-col gap-y-[40px] lg:gap-y-[80px] lg:items-center xl:px-[6.5vw]">
-          <Solution></Solution>
-          <Steps></Steps>
-          <Tariff></Tariff>
-          <FAQ></FAQ>
-          <Application />
+                <div className="flex flex-col gap-y-[40px] lg:gap-y-[80px] lg:items-center xl:px-[6.5vw]">
+                    <Solution></Solution>
+                    <Steps></Steps>
+                    <Tariff></Tariff>
+                    <FAQ></FAQ>
+                    <Application />
+                </div>
+
+                <MessageModal></MessageModal>
+            </div>
+
+            <Footer />
         </div>
-
-        <MessageModal></MessageModal>
-      </div>
-
-      <Footer />
-    </div>
-  )
+    )
 }

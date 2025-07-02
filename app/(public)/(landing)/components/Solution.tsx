@@ -10,7 +10,7 @@ const Solution = () => (
         className="w-full flex flex-col items-center text-center gap-y-[40px] bg-white  scroll-mt-[100px] "
     >
         <div className="flex flex-col items-center gap-y-[24px] px-[4vw] xl:px-0">
-            <Typography center variants={"h2"}>
+            <Typography color="black" center variants={"h2"}>
                 Маркетинг, аналитика и лояльность <br /> в одном решении
             </Typography>
 
