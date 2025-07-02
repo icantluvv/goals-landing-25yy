@@ -1,34 +1,10 @@
-import Link from "next/link"
-import header_logo from "@/public/header/header_logo.svg"
-import Image from "next/image"
 import Typography from "@/ui/core/Typography/Typography"
+import Header from "./(public)/(landing)/components/Header"
 
 const NotFound = () => {
     return (
         <div className="h-[100svh] bg-gradient-custom flex flex-col items-center relative overflow-hidden">
-            {/* <header className="w-full fixed h-[64px] px-[4vw] backdrop-blur-md bg-white/30 flex items-center z-[2000]">
-        <Link href={"/"}>
-          <Image
-            src={header_logo}
-            alt={"header_logo"}
-            className="h-[44px] w-auto"
-          ></Image>
-        </Link>
-      </header> */}
-
-            <header
-                className={`fixed top-0 h-[64px] w-full lg:w-[88vw] lg:rounded-[64px] rounded-0 lg:mt-[24px] px-[4vw] items-center gap-[56px] z-[5000] backdrop-blur-md bg-white/30 `}
-            >
-                <div className="flex w-full h-full items-center">
-                    <Link href={"/"}>
-                        <Image
-                            src={header_logo}
-                            className="h-[44px] lg:h-[50px] w-auto"
-                            alt="logo"
-                        />
-                    </Link>
-                </div>
-            </header>
+            <Header />
 
             <main className="flex items-center justify-center flex-1 ">
                 <div
