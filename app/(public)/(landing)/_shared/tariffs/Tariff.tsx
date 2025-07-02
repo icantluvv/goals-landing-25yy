@@ -50,7 +50,7 @@ bg-darkBlue/5 p-[24px] md:p-[48px] rounded-[25px] lg:rounded-[35px] md:min-h-[50
                 </ul>
             </div>
 
-            <div className="max-w-[200px]">
+            <div className="flex">
                 <Link
                     href="/#connect"
                     className="bg-darkBlue flex px-[18px] md:px-[30px] py-[12px] md:py-[18px] rounded-full active:bg-darkBlue/75 select-none"

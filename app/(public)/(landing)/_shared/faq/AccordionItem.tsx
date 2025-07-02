@@ -29,7 +29,7 @@ const AccordionItem = ({
             } transition-all duration-300 select-none`}
         >
             <button className="flex items-center justify-between flex-1 cursor-pointer">
-                <Typography className="max-w-[85%] " variants="button">
+                <Typography className="max-w-[85%] text-start" variants="button">
                     {question}
                 </Typography>
                 <Image
