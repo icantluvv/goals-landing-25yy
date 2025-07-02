@@ -9,7 +9,7 @@ const MessageModal = () => {
     if (openMessageModal) {
         return (
             <div className="w-full fixed z-[9000] bg-PrimaryBlack/30 h-screen flex items-center justify-center">
-                <form className="bg-white fixed rounded-[24px] p-[24px] xl:p-[48px] w-1/3 flex flex-col gap-[24px]">
+                <form className="bg-white fixed rounded-[24px] p-[24px] xl:p-[48px] w-[90vw] md:w-[70vw] xl:w-[50vw] flex flex-col gap-[24px]">
                     <Typography variants="h5" color="black">
                         Задайте Ваш вопрос
                     </Typography>
