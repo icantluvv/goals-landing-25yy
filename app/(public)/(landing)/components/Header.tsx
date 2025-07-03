@@ -3,7 +3,8 @@ import React from "react"
 import MobileHeader from "@/app/(public)/(landing)/_shared/header/MobileHeader"
 import RegularHeader from "@/app/(public)/(landing)/_shared/header/RegularHeader"
 
-const baseButtonStyles = "backdrop-blur-md bg-white/30 "
+const baseButtonStyles = "backdrop-blur-md bg-white/30"
+
 const navLinks = [
   { id: "/#about", label: "О нас" },
   { id: "/#forbusiness", label: "Бизнесу" },

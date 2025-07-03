@@ -1,6 +1,11 @@
 import { useMobileHeaderStore } from "@/store/mobileHeaderStore"
 import MobileNavigation from "./MobileNavigation"
 import { useBodyLock } from "@/hooks/useBodyLockScroll"
+import Button from "@/ui/core/Button/Button"
+
+type MobileHeaderProps = {
+  navLinks: { id: string; label: string }[]
+}
 
 const MobileHeader = ({ navLinks }: MobileHeaderProps) => {
   const openHeader = useMobileHeaderStore((state) => state.openHeader)
@@ -8,33 +13,41 @@ const MobileHeader = ({ navLinks }: MobileHeaderProps) => {
 
   useBodyLock(openHeader)
 
+  function handleOpenHeader() {
+    setOpenHeader()
+  }
+
   return (
     <>
       <header
         className={`h-[64px] fixed left-0 top-0 w-full z-[9000] px-[4vw] flex justify-end items-center lg:hidden`}
       >
-        <button
-          onClick={() => setOpenHeader()}
-          className="w-[54px] h-[54px] flex flex-col items-center justify-center gap-[8px] relative"
-        >
-          <div
-            className={`w-[22px] absolute h-[1.5px] transition-all bg-PrimaryBlack ${
-              openHeader ? "rotate-45" : "mt-[-10px]"
-            }`}
-          />
-          <div
-            className={`w-[22px] absolute h-[1.5px] transition-all bg-PrimaryBlack ${
-              openHeader ? "rotate-[-45deg]" : "mt-[10px]"
-            }`}
-          />
-        </button>
+        <div className="w-[54px]">
+          <Button
+            onClick={handleOpenHeader}
+            variant="custom"
+            type="button"
+            className="w-[54px] h-[54px] flex flex-col items-center justify-center gap-[8px] relative"
+          >
+            <div
+              className={`w-[22px] absolute h-[1.5px] transition-all bg-PrimaryBlack ${
+                openHeader ? "rotate-45" : "mt-[-10px]"
+              }`}
+            />
+            <div
+              className={`w-[22px] absolute h-[1.5px] transition-all bg-PrimaryBlack ${
+                openHeader ? "rotate-[-45deg]" : "mt-[10px]"
+              }`}
+            />
+          </Button>
+        </div>
       </header>
 
       <div
         className={`fixed inset-0 bg-black/60 z-[8000] transition-opacity duration-300 ${
           openHeader ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
-        onClick={() => setOpenHeader()}
+        onClick={handleOpenHeader}
       />
 
       <MobileNavigation navLinks={navLinks} />
@@ -43,7 +56,3 @@ const MobileHeader = ({ navLinks }: MobileHeaderProps) => {
 }
 
 export default MobileHeader
-
-interface MobileHeaderProps {
-  navLinks: { id: string; label: string }[]
-}
