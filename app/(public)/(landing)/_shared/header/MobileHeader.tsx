@@ -25,8 +25,8 @@ const MobileHeader = ({ navLinks }: MobileHeaderProps) => {
         <div className="w-[54px]">
           <Button
             onClick={handleOpenHeader}
-            variant="custom"
             type="button"
+            variant="primary"
             className="w-[54px] h-[54px] flex flex-col items-center justify-center gap-[8px] relative"
           >
             <div
