@@ -1,12 +1,14 @@
 import React, { ReactNode } from "react"
 import clsx from "clsx"
 
+const defaultButtons = "flex gap-[12px] items-center"
+
 const variantsButton = {
-  center: "flex w-full justify-center items-center text-center",
+  center: " w-full justify-center  text-center",
 
   size: {
     default:
-      "w-full gap-x-[12px] px-[18px] lg:px-[24px] py-[12px] lg:py-[18px] flex items-center justify-center select-none cursor-pointer" as const,
+      "w-full gap-x-[12px] px-[18px] lg:px-[24px] py-[12px] lg:py-[18px] justify-center select-none cursor-pointer" as const,
     custom: ""
   },
 
@@ -58,6 +60,7 @@ const Button = ({
     <button
       type={Tag === "button" ? type : undefined}
       className={clsx(
+        defaultButtons,
         color && variantsButton.color[color],
         size && variantsButton.size[size],
         variantsButton.variant[variant],
