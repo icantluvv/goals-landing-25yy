@@ -1,30 +1,22 @@
-import Image from "next/image"
-import header_logo from "@/public/header/header_logo.svg"
-import Link from "next/link"
 import RegularNavigation from "@/app/(public)/(landing)/_shared/header/RegularNavigation"
+import HeaderLogo from "./HeaderLogo"
+import TryButton from "./TryButton"
+
+type RegularHeaderProps = {
+  navLinks: { id: string; label: string }[]
+  baseButtonStyles: string
+}
 
 const RegularHeader = ({ navLinks, baseButtonStyles }: RegularHeaderProps) => {
   return (
     <header
-      className={`fixed top-0 h-[64px] w-[88vw] rounded-[64px] mt-[24px] px-[4vw] items-center gap-[56px] z-[5000] hidden lg:flex ${baseButtonStyles} `}
+      className={`fixed top-0 h-[64px] w-[88vw] rounded-[64px] mt-[24px] pl-[4vw] pr-4 items-center gap-[56px] z-[5000] hidden lg:flex ${baseButtonStyles} `}
     >
-      <Logo />
+      <HeaderLogo />
       <RegularNavigation navLinks={navLinks} />
+      <TryButton />
     </header>
   )
 }
 
 export default RegularHeader
-
-const Logo = () => {
-  return (
-    <Link className={` gap-x-3 `} href={"/public"}>
-      <Image src={header_logo} className="h-[50px] w-auto" alt="logo" />
-    </Link>
-  )
-}
-
-interface RegularHeaderProps {
-  navLinks: { id: string; label: string }[]
-  baseButtonStyles: string
-}

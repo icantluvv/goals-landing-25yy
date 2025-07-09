@@ -1,12 +1,10 @@
-import React from "react"
 import like from "@/public/like.png"
 import Image from "next/image"
 import trend from "@/public/trend.svg"
-import Link from "next/link"
 import { steps } from "@/constants/steps"
 import Typography from "@/ui/core/Typography/Typography"
 import Step from "../_shared/steps/Step"
-import Button from "@/ui/core/Button/Button"
+import AnalysisButton from "../_shared/steps/AnalysisButton"
 
 const Steps = () => {
   return (
@@ -20,12 +18,7 @@ const Steps = () => {
         min-w-[300px] md:min-w-[400px] xl:min-w-auto shadow-md"
         >
           <div className="w-[75px] h-[75px] md:w-[100px] md:h-[100px] rounded-[50%] border-3 md:border-4 border-white flex justify-center items-center">
-            <Image
-              src={like}
-              alt={"like"}
-              objectFit="cover"
-              className="scale-75 lg:scale-100"
-            ></Image>
+            <Image src={like} alt={"like"} objectFit="cover" className="scale-75 lg:scale-100" />
           </div>
 
           <Typography color="white" variants="h3">
@@ -43,19 +36,13 @@ const Steps = () => {
           className="w-full lg:w-[calc(50%-12px)] bg-darkBlue rounded-[25px] lg:rounded-[35px] p-[24px] lg:p-[48px] flex flex-col 
         justify-between gap-y-[96px] lg:gap-y-[48px] relative min-w-[300px] md:min-w-[400px] xl:min-w-auto overflow-hidden"
         >
-          <Image src={trend} alt={"trend"} className="absolute bottom-0 right-[48px]"></Image>
+          <Image src={trend} alt={"trend"} className="absolute bottom-0 right-[48px]" />
 
           <Typography color="white" variants="h5">
             Анализируйте результат
           </Typography>
 
-          <Link href={"/#connect"} className="flex max-w-[250px] z-10">
-            <Button variant="primary" size="default" className="max-w-[220px]" color="green">
-              <Typography color="black" variants="button">
-                Подключить
-              </Typography>
-            </Button>
-          </Link>
+          <AnalysisButton />
         </div>
       </div>
     </section>
