@@ -11,7 +11,7 @@ const RegularNavigation = ({ navLinks }: RegularNavigationProps) => {
 
   return (
     <nav className="lg:flex gap-x-4 flex-1 hidden items-center h-[64px]">
-      <div className={` flex gap-x-6 `}>
+      <div className={`inline-flex gap-x-6`}>
         {navLinks.map(({ id, label }) => (
           <Link
             key={id}
@@ -19,9 +19,11 @@ const RegularNavigation = ({ navLinks }: RegularNavigationProps) => {
             onClick={() => setChooseNavElement(id)}
             className={`${
               chooseNavElement === id ? "text-PrimaryBlack" : "text-PrimaryBlack/50"
-            } text-[0.875rem]  hover:text-PrimaryBlack`}
+            } text-[0.875rem] whitespace-nowrap hover:text-PrimaryBlack`}
           >
-            <Typography variants="p">{label}</Typography>
+            <Typography className="inline" variants="p">
+              {label}
+            </Typography>
           </Link>
         ))}
       </div>
