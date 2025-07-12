@@ -11,7 +11,7 @@ import MessageModal from "@/app/(public)/(landing)/components/MessageModal"
 export default function LandingPage() {
   return (
     <div className="bg-white flex flex-col ">
-      {/* <Header /> */}
+      <Header />
 
       <div className="flex flex-col  items-center gap-y-[40px] lg:gap-y-[80px]">
         <FirstSection></FirstSection>
