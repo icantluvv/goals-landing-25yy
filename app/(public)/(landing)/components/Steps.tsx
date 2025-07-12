@@ -10,7 +10,7 @@ const Steps = () => {
   return (
     <section
       id="steps"
-      className="flex w-full gap-[24px] flex-row py-2 overflow-x-auto px-[4vw] no-scrollbar xl:px-0"
+      className="container flex gap-[24px] flex-row py-2 overflow-x-auto no-scrollbar"
     >
       <div className="flex-1 select-none">
         <div

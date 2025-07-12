@@ -4,7 +4,7 @@ import clsx from "clsx"
 const defaultButtons = "flex gap-[12px] items-center"
 
 const variantsButton = {
-  center: " w-full justify-center  text-center",
+  center: "w-full justify-center text-center",
 
   size: {
     default:

@@ -1,6 +1,6 @@
 import RegularNavigation from "@/app/(public)/(landing)/_shared/header/RegularNavigation"
 import HeaderLogo from "./HeaderLogo"
-import TryButton from "./TryButton"
+import { useHeaderScroll } from "@/hooks/useHeaderScroll"
 
 type RegularHeaderProps = {
   navLinks: { id: string; label: string }[]
@@ -8,14 +8,18 @@ type RegularHeaderProps = {
 }
 
 const RegularHeader = ({ navLinks, baseButtonStyles }: RegularHeaderProps) => {
+  const isScrolled = useHeaderScroll()
   return (
-    <header
-      className={`fixed top-0 h-[64px] w-[88vw] rounded-[64px] mt-[24px] pl-[4vw] pr-4 items-center gap-[56px] z-[5000] hidden lg:flex ${baseButtonStyles} `}
-    >
-      <HeaderLogo />
-      <RegularNavigation navLinks={navLinks} />
-      <TryButton />
-    </header>
+    <div className="fixed top-0 px-[6vw] z-[5000] hidden lg:block w-full">
+      <header
+        className={`transition-all duration-300 w-full inline-flex items-center gap-[56px] rounded-full mt-[24px] px-[4vw] ${
+          isScrolled ? "max-w-[45%]" : "max-w-full"
+        } ${baseButtonStyles}`}
+      >
+        <HeaderLogo />
+        <RegularNavigation navLinks={navLinks} />
+      </header>
+    </div>
   )
 }
 

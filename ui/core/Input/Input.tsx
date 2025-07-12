@@ -4,45 +4,45 @@ import { useState } from "react"
 import { IMaskInput } from "react-imask"
 
 type InputProps = {
-    placeholder: string
-    className?: string
-    type: string
-    mask?: string
+  placeholder: string
+  className?: string
+  type: string
+  mask?: string
 }
 
 const Input = ({ placeholder, className, type, mask }: InputProps) => {
-    const [value, setValue] = useState("")
-    const [isFocused, setIsFocused] = useState(false)
+  const [value, setValue] = useState("")
+  const [isFocused, setIsFocused] = useState(false)
 
-    const isActive = isFocused || value.length > 0
+  const isActive = isFocused || value.length > 0
 
-    const inputClassNames = `w-full px-1.5 py-3 border-b placeholder:text-gray-500 placeholder:font-poppins border-PrimaryBlack/25 focus:outline-none ${className}`
+  const inputClassNames = `w-full px-1.5 py-3 border-b placeholder:text-gray-500 placeholder:font-poppins border-PrimaryBlack/25 focus:outline-none ${className}`
 
-    return (
-        <div className="relative w-full">
-            {mask ? (
-                <IMaskInput
-                    mask={mask}
-                    value={value}
-                    onAccept={(val: string) => setValue(val)}
-                    onFocus={() => setIsFocused(true)}
-                    onBlur={() => setIsFocused(false)}
-                    className={inputClassNames}
-                    placeholder={placeholder}
-                />
-            ) : (
-                <input
-                    type={type}
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                    onFocus={() => setIsFocused(true)}
-                    onBlur={() => setIsFocused(false)}
-                    className={inputClassNames}
-                    placeholder={placeholder}
-                />
-            )}
+  return (
+    <div className="relative w-full">
+      {mask ? (
+        <IMaskInput
+          mask={mask}
+          value={value}
+          onAccept={(val: string) => setValue(val)}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          className={inputClassNames}
+          placeholder={placeholder}
+        />
+      ) : (
+        <input
+          type={type}
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
+          className={inputClassNames}
+          placeholder={placeholder}
+        />
+      )}
 
-            <label
+      {/* <label
                 className={`
           absolute z-[-1] left-0
           transition-all duration-200
@@ -54,9 +54,9 @@ const Input = ({ placeholder, className, type, mask }: InputProps) => {
         `}
             >
                 {placeholder}
-            </label>
-        </div>
-    )
+            </label> */}
+    </div>
+  )
 }
 
 export default Input

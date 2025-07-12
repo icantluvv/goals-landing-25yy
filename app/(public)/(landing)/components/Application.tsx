@@ -9,15 +9,15 @@ const Application = () => {
   return (
     <section
       id="connect"
-      className="scroll-mt-[200px] relaive flex flex-col xl:flex-row w-full items-center lg:max-w-[60vw] xl:max-w-[1400px] justify-start xl:gap-[80px] mb-[40px] xl:mb-[80px] px-[4vw] lg:px-0"
+      className="container scroll-mt-[200px] relaive flex flex-col xl:flex-row w-full items-center justify-start xl:gap-[80px] mb-[40px] xl:mb-[80px]"
     >
-      <form className="flex w-full  md:max-w-[70vw] lg:max-w-auto flex-col items-center xl:items-start xl:w-full gap-[24px]">
+      <form className="flex w-full md:max-w-[70vw] lg:max-w-auto flex-col items-center xl:items-start xl:w-full gap-[24px]">
         <div className="flex flex-col text-center xl:text-start gap-[6px]">
-          <Typography color="black" variants="h5">
+          <Typography color="black" variants="h2">
             Оставьте заявку!
           </Typography>
 
-          <Typography color="black" variants="h5">
+          <Typography color="black" variants="accent">
             Мы с вами свяжемся для продолжения регистрации
           </Typography>
         </div>

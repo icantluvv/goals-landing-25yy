@@ -9,7 +9,7 @@ import { links, rightLinks, socialLinks } from "@/constants/footer-links"
 import LinksGroup from "../_shared/footer/LinksGroup"
 
 const Footer = () => (
-  <footer className="w-full flex justify-center bg-white py-10 border-t border-PrimaryBlack/10">
+  <footer className="w-full flex z-[1000] justify-center bg-white py-10 border-t border-PrimaryBlack/10">
     <div className="container">
       <Link href="/public" className="inline-flex">
         <Image src={header_logo} alt="footer_logo" className="w-auto h-[50px]" />
