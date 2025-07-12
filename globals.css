@@ -73,6 +73,12 @@ a {
   }
 }
 
+@layer components {
+  .container {
+    @apply 2xl:max-w-[1500px] xl:max-w-[1300px] px-[2vw] md:px-[4vw] xl:px-[10vw];
+  }
+}
+
 @layer utilities {
   .no-scrollbar {
     -ms-overflow-style: none; /* IE и Edge */

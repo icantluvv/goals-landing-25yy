@@ -1,24 +1,29 @@
 import Typography from "@/ui/core/Typography/Typography"
+import clsx from "clsx"
 import Link from "next/link"
 import React from "react"
 
-const LinksGroup = ({
-  title,
-  items
-}: {
+type Links = {
   title: string
-  items: { title: string; href: string }[]
-}) => (
-  <div className="flex flex-col gap-4">
-    <h4 className="text-PrimaryBlack">{title}</h4>
-    <div className="flex flex-col xl:flex-row gap-x-[100px]">
-      <div className="flex flex-col gap-y-3">
-        {items.map(({ title, href }) => (
-          <Link key={title} href={href} className="hover:text-PrimaryBlack ">
-            <Typography variants="p">{title}</Typography>
-          </Link>
-        ))}
-      </div>
+  href: string
+}
+
+type LinksGroupProps = {
+  className?: string
+  title: string
+  items: Links[]
+}
+
+const LinksGroup = ({ title, items, className }: LinksGroupProps) => (
+  <div className={clsx("flex flex-col gap-4", className)}>
+    <Typography variants="h6">{title}</Typography>
+
+    <div className="flex flex-col gap-3">
+      {items.map(({ title, href }) => (
+        <Link key={title} href={href} className="hover:scale-105">
+          <Typography variants="p">{title}</Typography>
+        </Link>
+      ))}
     </div>
   </div>
 )
