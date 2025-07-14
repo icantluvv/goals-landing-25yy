@@ -29,13 +29,7 @@ const FirstSection = () => {
 
         <div className="flex flex-col lg:flex-row gap-4">
           <Link href="/#connect">
-            <Button
-              size="default"
-              type="button"
-              className="gap-x-[10px] px-[24px] py-[18px]"
-              color="darkBlue"
-              variant="primary"
-            >
+            <Button size="default" type="button" color="darkBlue" variant="primary">
               <Typography color="white" variants="button">
                 Подключить
               </Typography>

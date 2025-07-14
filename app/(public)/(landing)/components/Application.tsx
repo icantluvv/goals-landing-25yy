@@ -31,7 +31,7 @@ const Application = () => {
         </div>
         <ApproveLicenseButton />
 
-        <div>
+        <div className="w-full xl:w-auto">
           <Button size="default" color="black" variant="primary">
             <Typography color="white" variants="button">
               Отправить
