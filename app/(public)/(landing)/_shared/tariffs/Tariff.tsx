@@ -20,7 +20,7 @@ type TariffProps = {
 const Tariff = ({ tariff }: TariffProps) => {
   return (
     <li
-      className="grid grid-rows-[auto_1fr] lg:grid-rows-none lg:grid-cols-[35%_65%] gap-4 lg:gap-8
+      className="grid grid-rows-[auto_1fr] lg:grid-rows-none lg:grid-cols-[30%_65%] gap-4 lg:gap-8
 bg-darkBlue/5 p-[24px] lg:p-[32px] rounded-[24px]"
     >
       <div className="min-w-[25%] flex flex-col md:justify-between">
@@ -41,7 +41,7 @@ bg-darkBlue/5 p-[24px] lg:p-[32px] rounded-[24px]"
         </Link>
       </div>
 
-      <div className="flex-1">
+      <div>
         <Typography
           className="max-h-[120px] overflow-y-auto no-scrollbar text-[16px] xl:text-[18px]"
           variants="custom"

@@ -31,7 +31,7 @@ const Footer = () => (
             <Link
               href={url}
               key={i}
-              className="inline-flex w-[18px] h-[18px] md:w-[22px] md:h-[22px] xl:w-[30px] xl:h-[30px] relative"
+              className="inline-flex w-[18px] h-[18px] md:w-[22px] md:h-[22px] xl:w-[25px] xl:h-[25px] relative"
             >
               <Image
                 src={icon}
