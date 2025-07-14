@@ -1,8 +1,7 @@
 "use client"
-
-import Button from "@/ui/core/Button/Button"
 import CheckBox from "@/ui/core/CheckBox/CheckBox"
 import Typography from "@/ui/core/Typography/Typography"
+import Link from "next/link"
 import React, { useState, useCallback } from "react"
 
 const ApproveLicenseButton = () => {
@@ -13,12 +12,15 @@ const ApproveLicenseButton = () => {
   }, [])
 
   return (
-    <Button type="button" onClick={handleApprove} size="custom">
-      <CheckBox checked={check} />
+    <div className="flex items-center gap-3">
+      <CheckBox checked={check} onChange={handleApprove} />
       <Typography className="text-gray-500" variants="p">
-        Даю согласие на обработку персональных данных
+        Даю согласие на обработку{" "}
+        <Link href="/license " className="border-b hover:text-PrimaryBlack border-gray-400">
+          персональных данных
+        </Link>
       </Typography>
-    </Button>
+    </div>
   )
 }
 

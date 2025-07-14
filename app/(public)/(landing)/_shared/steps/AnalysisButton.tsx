@@ -5,8 +5,8 @@ import React from "react"
 
 const AnalysisButton = () => {
   return (
-    <Link href={"/#connect"} className="flex max-w-[250px] z-10">
-      <Button variant="primary" size="default" className="max-w-[220px]" color="green">
+    <Link href={"/#connect"} className="flex w-full md:max-w-[250px] z-10">
+      <Button variant="primary" size="default" color="green">
         <Typography color="black" variants="button">
           Подключить
         </Typography>
