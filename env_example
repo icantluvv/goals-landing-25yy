@@ -1,0 +1,5 @@
+SMTP_HOST=smtp.yandex.ru
+SMTP_PORT=465
+SMTP_USER=info@do-goals.ru
+SMTP_PASSWORD=Do-goals2525
+SMTP_FROM_EMAIL=info@do-goals.ru
