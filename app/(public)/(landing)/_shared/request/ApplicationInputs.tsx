@@ -10,10 +10,9 @@ import { useApplicationErrorModalStore } from "@/store/ApplicationErrorStore"
 
 const ApplicationInputs = () => {
   const [name, setName] = useState("")
-  const [phone, setPhone] = useState("")
   const [email, setEmail] = useState("")
-  const [inn, setInn] = useState("")
-  const [loading, setLoading] = useState(false)
+  const [orgCode, setOrgCode] = useState("")
+  const [phone, setPhone] = useState("")
   const [approve, setApprove] = useState(false)
 
   const { addModal } = useApplicationErrorModalStore()
@@ -21,26 +20,23 @@ const ApplicationInputs = () => {
   const handleSubmit = async () => {
     if (!approve) return
 
-    setLoading(true)
-
     try {
       const response = await axios.post("/api/contact", {
         name,
-        phone,
         email,
-        inn
+        orgCode,
+        phone
       })
 
       if (response.status === 200) {
         setName("")
         setPhone("")
         setEmail("")
-        setInn("")
+        setOrgCode("")
       }
     } catch {
       addModal()
     } finally {
-      setLoading(false)
     }
   }
 
@@ -72,10 +68,11 @@ const ApplicationInputs = () => {
         <Input
           placeholder="ИНН Организации"
           type="text"
-          value={inn}
-          onChange={(e) => setInn(e.target.value)}
+          value={orgCode}
+          onChange={(e) => setOrgCode(e.target.value)}
         />
       </div>
+
       <ApproveLicenseButton setApprove={setApprove} approve={approve} />
 
       <div className="w-full xl:w-auto flex items-center">
@@ -84,7 +81,7 @@ const ApplicationInputs = () => {
           color={approve ? "black" : "disable"}
           variant={approve ? "primary" : "disabled"}
           onClick={approve ? handleSubmit : undefined}
-          disabled={loading || !approve}
+          disabled={!approve}
         >
           <Typography color="white" variants="button">
             Отправить

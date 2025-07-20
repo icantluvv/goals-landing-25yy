@@ -3,9 +3,9 @@ import nodemailer from "nodemailer"
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, message } = await req.json()
+    const { name, email, orgCode, phone } = await req.json()
 
-    if (!name || !email || !message) {
+    if (!name || !email || !orgCode || !phone) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 })
     }
 
@@ -22,11 +22,13 @@ export async function POST(req: NextRequest) {
     await transporter.sendMail({
       from: process.env.SMTP_FROM_EMAIL,
       to: process.env.SMTP_FROM_EMAIL,
-      subject: "Новое сообщение с сайта",
-      text: `Имя: ${name}\nEmail: ${email}\nСообщение: ${message}`,
+      subject: "Новое сообщение с do-goals.ru",
+      text: `Имя: ${name}\nEmail: ${email}\n`,
       html: `<p><strong>Имя:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
-             <p><strong>Сообщение:</strong><br>${message}</p>`
+               <p><strong>ИНН:</strong> ${orgCode}</p>
+                 <p><strong>Телефон:</strong> ${phone}</p>
+            `
     })
 
     return NextResponse.json({ success: true })
