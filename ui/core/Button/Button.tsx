@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react"
+import { ReactNode } from "react"
 import clsx from "clsx"
 
 const defaultButtons = "flex gap-[12px] items-center"
@@ -17,11 +17,14 @@ const variantsButton = {
     white: "bg-white text-darkBlue active:opacity-80",
     green: "bg-brandGreen active:bg-GreenActive",
     black: "bg-PrimaryBlack active:bg-PrimaryBlack/75 ",
-    empty: "bg-transparent"
+    empty: "bg-transparent",
+    disable: "bg-gray-400 cursor-not-allowed"
   },
   variant: {
+
     primary: "rounded-full w-full ",
-    secondary: "rounded-[12px]"
+    secondary: "rounded-full",
+    disabled: "rounded-full"
   }
 } as const
 
@@ -43,17 +46,17 @@ type ButtonProps = {
 }
 
 const Button = ({
-  children,
-  className,
-  type = "button",
-  variant = "primary",
-  center,
-  size,
-  color,
-  as,
-  onClick,
-  disabled
-}: ButtonProps) => {
+                  children,
+                  className,
+                  type = "button",
+                  variant = "primary",
+                  center,
+                  size,
+                  color,
+                  as,
+                  onClick,
+                  disabled
+                }: ButtonProps) => {
   const Tag = as || "button"
 
   return (

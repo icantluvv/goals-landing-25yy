@@ -10,7 +10,6 @@ const CheckBox = ({ checked, onChange }: CheckBoxProps) => {
       className="w-[20px] h-[20px] cursor-pointer"
       checked={checked}
       onChange={onChange}
-      readOnly={!onChange}
     />
   )
 }
