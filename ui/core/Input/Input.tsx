@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { IMaskInput } from "react-imask"
 
 type InputProps = {
@@ -8,11 +7,11 @@ type InputProps = {
   className?: string
   type: string
   mask?: string
+  value?: string
+  onChange?: (e: any) => void
 }
 
-const Input = ({ placeholder, className, type, mask }: InputProps) => {
-  const [value, setValue] = useState("")
-
+const Input = ({ placeholder, className = "", type, mask, value = "", onChange }: InputProps) => {
   const inputClassNames = `w-full px-1.5 py-3 border-b placeholder:text-gray-500 placeholder:font-poppins border-PrimaryBlack/25 focus:outline-none ${className}`
 
   return (
@@ -21,7 +20,9 @@ const Input = ({ placeholder, className, type, mask }: InputProps) => {
         <IMaskInput
           mask={mask}
           value={value}
-          onAccept={(val: string) => setValue(val)}
+          onAccept={(val: string) => {
+            onChange?.({ target: { value: val } })
+          }}
           className={inputClassNames}
           placeholder={placeholder}
         />
@@ -29,7 +30,7 @@ const Input = ({ placeholder, className, type, mask }: InputProps) => {
         <input
           type={type}
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={onChange}
           className={inputClassNames}
           placeholder={placeholder}
         />
