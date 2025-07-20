@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
              <p><strong>Email:</strong> ${email}</p>
                <p><strong>ИНН:</strong> ${orgCode}</p>
                  <p><strong>Телефон:</strong> ${phone}</p>
-            `
+                 <p>Я, ${name}, даю согласие на обработку свои персональных данных и прошу ответить на мою заявку</p>`
     })
 
     return NextResponse.json({ success: true })
