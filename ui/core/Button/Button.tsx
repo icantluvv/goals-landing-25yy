@@ -21,10 +21,9 @@ const variantsButton = {
     disable: "bg-gray-400 cursor-not-allowed"
   },
   variant: {
-
     primary: "rounded-full w-full ",
     secondary: "rounded-full",
-    disabled: "rounded-full"
+    disabled: "rounded-full cursor-default"
   }
 } as const
 
@@ -46,17 +45,17 @@ type ButtonProps = {
 }
 
 const Button = ({
-                  children,
-                  className,
-                  type = "button",
-                  variant = "primary",
-                  center,
-                  size,
-                  color,
-                  as,
-                  onClick,
-                  disabled
-                }: ButtonProps) => {
+  children,
+  className,
+  type = "button",
+  variant = "primary",
+  center,
+  size,
+  color,
+  as,
+  onClick,
+  disabled
+}: ButtonProps) => {
   const Tag = as || "button"
 
   return (

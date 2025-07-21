@@ -11,7 +11,7 @@ type InputProps = {
   onChange?: (e: any) => void
 }
 
-const Input = ({ placeholder, className = "", type, mask, value = "", onChange }: InputProps) => {
+const Input = ({ placeholder, className, type, mask, value = "", onChange }: InputProps) => {
   const inputClassNames = `w-full px-1.5 py-3 border-b placeholder:text-gray-500 placeholder:font-poppins border-PrimaryBlack/25 focus:outline-none ${className}`
 
   return (
