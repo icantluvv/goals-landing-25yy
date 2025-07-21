@@ -10,31 +10,33 @@ import { useApplicationErrorModalStore } from "@/store/ApplicationErrorStore"
 import { applicationSchema } from "@/schemas/applicationSchema"
 
 const ApplicationInputs = () => {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [orgCode, setOrgCode] = useState("")
-  const [phone, setPhone] = useState("")
-  const [approve, setApprove] = useState(false)
-
-  const [loading, setLoading] = useState(false)
-
-  const [errors, setErrors] = useState({
-    name: false,
-    email: false,
-    phone: false,
-    orgCode: false
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    orgCode: "",
+    phone: ""
   })
 
+  const [errors, setErrors] = useState<Record<string, boolean>>({})
+  const [approve, setApprove] = useState(false)
+  const [loading, setLoading] = useState(false)
+
   const { addModal } = useApplicationErrorModalStore()
+
+  const handleChange = (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, [key]: e.target.value })
+  }
+
+  const getInputClass = (field: string) => (errors[field] ? "border-red-500" : "")
 
   const handleSubmit = async () => {
     if (!approve) return
 
     const result = applicationSchema.safeParse({
-      phone,
-      email,
-      fullName: name,
-      inn: orgCode
+      phone: form.phone,
+      email: form.email,
+      fullName: form.name,
+      inn: form.orgCode
     })
 
     if (!result.success) {
@@ -48,15 +50,15 @@ const ApplicationInputs = () => {
       return
     }
 
-    setErrors({ name: false, email: false, phone: false, orgCode: false })
+    setErrors({})
 
     try {
       setLoading(true)
       const response = await axios.post("/api/contact", {
-        name,
-        email,
-        orgCode,
-        phone
+        name: form.name,
+        email: form.email,
+        orgCode: form.orgCode,
+        phone: form.phone
       })
 
       if (response.status === 200) {
@@ -64,6 +66,8 @@ const ApplicationInputs = () => {
       }
     } catch {
       addModal()
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -74,33 +78,34 @@ const ApplicationInputs = () => {
           placeholder="Телефон"
           type="text"
           mask="+{7} (000) 000-00-00"
-          value={phone}
-          className={`${errors.phone ? "border-red-500" : ""}`}
-          onChange={(e) => setPhone(e.target.value)}
+          value={form.phone}
+          className={getInputClass("phone")}
+          onChange={handleChange("phone")}
         />
         <Input
           placeholder="Почта"
           type="email"
-          value={email}
-          className={`${errors.email ? "border-red-500" : ""}`}
-          onChange={(e) => setEmail(e.target.value)}
+          value={form.email}
+          className={getInputClass("email")}
+          onChange={handleChange("email")}
         />
       </div>
+
       <div className="flex w-full flex-col gap-[24px]">
         <Input
           placeholder="ФИО"
           type="text"
-          value={name}
-          className={`${errors.name ? "border-red-500" : ""}`}
-          onChange={(e) => setName(e.target.value)}
+          value={form.name}
+          className={getInputClass("name")}
+          onChange={handleChange("name")}
         />
         <Input
           placeholder="ИНН Организации"
           type="text"
           mask="0000000000"
-          value={orgCode}
-          className={`${errors.orgCode ? "border-red-500" : ""}`}
-          onChange={(e) => setOrgCode(e.target.value)}
+          value={form.orgCode}
+          className={getInputClass("orgCode")}
+          onChange={handleChange("orgCode")}
         />
       </div>
 
