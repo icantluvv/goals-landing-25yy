@@ -1,5 +1,4 @@
 import Typography from "@/ui/core/Typography/Typography"
-import React from "react"
 import TariffFeature from "./TariffFeature"
 import Link from "next/link"
 import Button from "@/ui/core/Button/Button"

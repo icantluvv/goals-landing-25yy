@@ -7,23 +7,39 @@ import Tariff from "@/app/(public)/(landing)/components/Tariffs"
 import FAQ from "@/app/(public)/(landing)/components/FAQ"
 import Application from "@/app/(public)/(landing)/components/Application"
 import MessageModal from "@/app/(public)/(landing)/_shared/modals/MessageModal"
+import { PageSchema } from "@/constants/constants"
+import { Metadata } from "next"
+import { getStaticMeta } from "@/utils/getStaticMeta"
+import Script from "next/script"
+
+export const metadata: Metadata = { ...getStaticMeta("/") }
+
 
 export default function LandingPage() {
+
   return (
-    <div className="bg-white flex flex-col ">
-      <Header />
+    <>
+      {/* eslint-disable-next-line @next/next/inline-script-id */}
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(PageSchema)
+        }}
+      />
+      <div className="bg-white flex flex-col ">
+        <Header />
+        <div className="flex flex-col  items-center gap-y-[40px] lg:gap-y-[80px]">
+          <FirstSection></FirstSection>
+          <Solution></Solution>
+          <Steps></Steps>
+          <Tariff></Tariff>
+          <FAQ></FAQ>
+          <Application />
+          <MessageModal></MessageModal>
+        </div>
 
-      <div className="flex flex-col  items-center gap-y-[40px] lg:gap-y-[80px]">
-        <FirstSection></FirstSection>
-        <Solution></Solution>
-        <Steps></Steps>
-        <Tariff></Tariff>
-        <FAQ></FAQ>
-        <Application />
-        <MessageModal></MessageModal>
+        <Footer />
       </div>
-
-      <Footer />
-    </div>
+    </>
   )
 }

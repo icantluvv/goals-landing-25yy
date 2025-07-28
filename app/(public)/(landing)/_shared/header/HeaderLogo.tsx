@@ -6,7 +6,7 @@ import React from "react"
 
 const HeaderLogo = () => {
   return (
-    <Link className={` gap-x-3 `} href={"/public"}>
+    <Link className={`gap-x-3 `} href={"/"}>
       <Image src={header_logo} className="h-[50px] w-auto" alt="logo" />
     </Link>
   )

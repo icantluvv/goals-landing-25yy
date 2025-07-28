@@ -16,13 +16,13 @@ const variantsTypography = {
   center: "flex w-full justify-center items-center text-center",
 
   variant: {
-    h1: "text-[40px] lg:text-[80px] font-bold font-inter",
+    h1: "text-[40px] md:text-[64px] lg:text-[80px] font-bold font-inter",
     h2: "text-[28px] lg:text-[56px] font-bold font-inter",
     h3: "text-[24px] lg:text-[52px] font-bold font-inter",
     h4: "text-[20px] lg:text-5xl font-bold font-inter",
     h5: "text-[18px] lg:text-[32px] font-bold font-inter",
     h6: "text-[16px] lg:text-xl font-bold font-inter",
-    accent: "text-[16px] lg:text-2xl font-poppins",
+    accent: "text-[16px] md:text-[18px] lg:text-2xl font-poppins",
     p: "text-xs lg:text-base font-poppins ",
     button: "text-base lg:text-xl font-poppins font-semibold",
     custom: "font-poppins",

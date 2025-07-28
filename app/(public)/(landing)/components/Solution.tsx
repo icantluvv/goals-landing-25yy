@@ -9,7 +9,7 @@ const Solution = () => (
   >
     <div>
       <Typography color="black" center variants={"h2"}>
-        Маркетинг, аналитика и лояльность <br /> в одном решении
+        Маркетинг, аналитика и лояльность <br /> в одном решении
       </Typography>
 
       <Typography className="text-gray-600 mt-[24px]" center variants={"accent"}>
@@ -17,7 +17,7 @@ const Solution = () => (
       </Typography>
     </div>
 
-    <div className="flex flex-col 2xl:flex-row gap-[24px] w-full no-scrollbar">
+    <div className="flex flex-col items-center lg:flex-row gap-[12px] xl:gap-[24px] w-full no-scrollbar">
       {solutionsData.map((item, index) => (
         <Feature key={index} icon={item.icon} title={item.title} text={item.text} />
       ))}
