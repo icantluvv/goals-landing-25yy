@@ -10,7 +10,7 @@ type FeatureProps = {
 const Feature = ({ icon, title, text }: FeatureProps) => {
   return (
     <div
-      className="flex-1 p-6 bg-white rounded-2xl border md:max-w-[500px] lg:min-h-[307px] xl:min-h-auto border-[#eaeaea] text-left flex flex-col items-center lg:items-start">
+      className="flex-1 p-6 bg-white rounded-2xl border md:max-w-[500px] lg:min-h-[307px] xl:min-h-[206px] border-[#eaeaea] text-left flex flex-col items-center lg:items-start">
       <div className="flex items-center gap-[2px] mb-3">
         <Image
           src={icon}
