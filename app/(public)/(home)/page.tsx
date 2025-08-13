@@ -1,0 +1,32 @@
+import { PageSchema } from "@/constants/constants"
+import { Metadata } from "next"
+import { getStaticMeta } from "@/utils/getStaticMeta"
+import Script from "next/script"
+import Tariffs from "@/ui/feature/home/Tariffs"
+import Steps from "@/ui/feature/home/Steps"
+
+export const metadata: Metadata = { ...getStaticMeta("/") }
+
+export default function LandingPage() {
+  return (
+    <>
+      <Script
+        id="breadcrumb-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(PageSchema)
+        }}
+      />
+
+      <div className="flex flex-col min-h-screen items-center relative gap-y-[40px] md:gap-y-[80px] xl:gap-y-[120px]">
+        {/*<FirstSection></FirstSection>*/}
+        {/*<Solution></Solution>*/}
+        <Steps />
+        <Tariffs />
+        {/*<FAQ></FAQ>*/}
+        {/*<Application />*/}
+        {/*<MessageModal></MessageModal>*/}
+      </div>
+    </>
+  )
+}

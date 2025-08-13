@@ -2,9 +2,9 @@ import Image from "next/image"
 import dark_arrow from "@/public/dark_arrow.svg"
 import goals from "@/public/first/GOALS.png"
 import Link from "next/link"
-import BackgroundCircles from "@/app/(public)/(landing)/_shared/hero/BackgroundCircles"
 import Typography from "@/ui/core/Typography/Typography"
 import Button from "@/ui/core/Button/Button"
+import BackgroundCircles from "@/app/(public)/(home)/_shared/hero/BackgroundCircles"
 
 const FirstSection = () => {
   return (
@@ -21,27 +21,43 @@ const FirstSection = () => {
           </Typography>
 
           <div className={"w-[60vw]"}>
-            <Typography center color={"white"} variants={"accent"} className={"hidden md:flex"}>
-              Ваши клиенты уже рассказывают о заведениях — пора управлять этим и извлекать выгоду!
+            <Typography
+              center
+              color={"white"}
+              variants={"accent"}
+              className={"hidden md:flex"}
+            >
+              Ваши клиенты уже рассказывают о заведениях — пора управлять этим и
+              извлекать выгоду!
             </Typography>
           </div>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-4">
-          <Link href="/#connect">
-            <Button size="default" type="button" color="darkBlue" variant="primary">
+          <Link href="/public#connect">
+            <Button
+              size="default"
+              type="button"
+              color="darkBlue"
+              variant="primary"
+            >
               <Typography color="white" variants="button">
                 Подключить
               </Typography>
             </Button>
           </Link>
 
-          <Link href="/#forbusiness">
+          <Link href="/public#forbusiness">
             <Button variant="primary" size="default" color="white">
               <Typography className="text-darkBlue" variants="button">
                 Как это работает?
               </Typography>
-              <Image width={24} height={24} src={dark_arrow} alt="arrow"></Image>
+              <Image
+                width={24}
+                height={24}
+                src={dark_arrow}
+                alt="arrow"
+              ></Image>
             </Button>
           </Link>
         </div>

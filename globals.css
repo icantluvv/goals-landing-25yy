@@ -73,11 +73,7 @@ a {
   }
 }
 
-@layer components {
-  .container {
-    @apply w-full 2xl:max-w-[1500px] xl:max-w-[1300px] px-[4vw] md:px-[4vw];
-  }
-}
+
 
 @layer utilities {
   .no-scrollbar {

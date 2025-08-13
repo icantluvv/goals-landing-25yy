@@ -1,5 +1,5 @@
-import RegularNavigation from "@/app/(public)/(landing)/_shared/header/RegularNavigation"
 import HeaderLogo from "./HeaderLogo"
+import RegularNavigation from "@/app/(public)/(home)/_shared/header/RegularNavigation"
 
 type RegularHeaderProps = {
   navLinks: { id: string; label: string }[]

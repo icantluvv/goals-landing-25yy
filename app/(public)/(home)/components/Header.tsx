@@ -1,8 +1,8 @@
 "use client"
 import React from "react"
-import MobileHeader from "@/app/(public)/(landing)/_shared/header/MobileHeader"
-import RegularHeader from "@/app/(public)/(landing)/_shared/header/RegularHeader"
 import { navLinks } from "@/constants/header-links"
+import RegularHeader from "@/app/(public)/(home)/_shared/header/RegularHeader"
+import MobileHeader from "@/app/(public)/(home)/_shared/header/MobileHeader"
 
 const baseButtonStyles = "backdrop-blur-md bg-white/30"
 

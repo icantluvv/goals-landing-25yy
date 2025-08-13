@@ -1,6 +1,6 @@
 import { solutionsData } from "@/constants/solutionsData"
-import Feature from "@/app/(public)/(landing)/_shared/solution/Feature"
 import Typography from "@/ui/core/Typography/Typography"
+import Feature from "@/app/(public)/(home)/_shared/solution/Feature"
 
 const Solution = () => (
   <section

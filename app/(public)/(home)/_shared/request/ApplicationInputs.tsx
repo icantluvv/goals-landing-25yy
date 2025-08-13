@@ -2,12 +2,12 @@
 
 import { useState } from "react"
 import Input from "@/ui/core/Input/Input"
-import ApproveLicenseButton from "@/app/(public)/(landing)/_shared/request/ApproveLicenseButton"
 import Button from "@/ui/core/Button/Button"
 import Typography from "@/ui/core/Typography/Typography"
 import axios from "axios"
 import { useApplicationErrorModalStore } from "@/store/ApplicationErrorStore"
 import { applicationSchema } from "@/schemas/applicationSchema"
+import ApproveLicenseButton from "@/app/(public)/(home)/_shared/request/ApproveLicenseButton"
 
 const ApplicationInputs = () => {
   const [form, setForm] = useState({

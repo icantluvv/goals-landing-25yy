@@ -6,23 +6,38 @@ import header_logo from "@/public/header/header_logo.svg"
 
 import Typography from "@/ui/core/Typography/Typography"
 import { links, rightLinks, socialLinks } from "@/constants/footer-links"
-import LinksGroup from "../_shared/footer/LinksGroup"
+import LinksGroup from "./links-group"
+import PageWrapper from "@/ui/shared/page-wrapper/page-wrapper"
 
 const Footer = () => (
-  <footer className="w-full flex z-[1000] justify-center bg-white py-10 border-t border-PrimaryBlack/10">
-    <div className="container">
+  <PageWrapper>
+    <footer className="w-full block z-[9999] justify-center bg-white py-10 border-t border-PrimaryBlack/10">
       <Link href="/public" className="inline-flex">
-        <Image src={header_logo} alt="footer_logo" className="w-auto h-[50px]" />
+        <Image
+          src={header_logo}
+          alt="footer_logo"
+          className="w-auto h-[50px]"
+        />
       </Link>
 
       <div className="md:flex gap-8 mt-4 md:mt-6 xl:mt-8">
         <LinksGroup title="Разделы и ссылки" items={links} />
-        <LinksGroup title="Правила" items={rightLinks} className="mt-4 md:mt-0" />
+        <LinksGroup
+          title="Правила"
+          items={rightLinks}
+          className="mt-4 md:mt-0"
+        />
       </div>
 
       <div className="mt-8 xl:mt-16">
         <div className="flex items-center gap-1">
-          <Image src={copyright} alt="copyright" className="opacity-50" width={15} height={15} />
+          <Image
+            src={copyright}
+            alt="copyright"
+            className="opacity-50"
+            width={15}
+            height={15}
+          />
           <Typography variants="p">2025 Goals. Все права защищены</Typography>
         </div>
 
@@ -43,8 +58,8 @@ const Footer = () => (
           ))}
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </PageWrapper>
 )
 
 export default Footer

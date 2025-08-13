@@ -1,31 +1,31 @@
 import Typography from "@/ui/core/Typography/Typography"
-import Header from "./(public)/(landing)/components/Header"
+import Header from "@/app/(public)/(home)/components/Header"
 
 const NotFound = () => {
-    return (
-        <div className="h-[100svh] bg-gradient-custom flex flex-col items-center relative overflow-hidden">
-            <Header />
+  return (
+    <div className="h-[100svh] bg-gradient-custom flex flex-col items-center relative overflow-hidden">
+      <Header />
 
-            <main className="flex items-center justify-center flex-1 ">
-                <div
-                    className="w-[700px] h-[700px] md:w-[1200px] md:h-[1200px] 
+      <main className="flex items-center justify-center flex-1 ">
+        <div
+          className="w-[700px] h-[700px] md:w-[1200px] md:h-[1200px]
       xl:w-[2000px] xl:h-[2000px] rounded-[50%] left-[-70vw] top-[-75vh] absolute bg-[#4A69A3]/76 blur-[100px] move-slow"
-                ></div>
-                <div
-                    className="w-[500px] h-[500px] md:w-[1000px] md:h-[1000px] 
+        ></div>
+        <div
+          className="w-[500px] h-[500px] md:w-[1000px] md:h-[1000px]
       xl:w-[1560px] xl:h-[1560px] rounded-[50%] lg:left-[30vw] lg:top-[-100vh] absolute bg-[#627DB1]/46 blur-[100px] lg:move-medium"
-                ></div>
-                <div
-                    className="w-[500px] h-[500px] md:w-[750px] md:h-[750px] 
+        ></div>
+        <div
+          className="w-[500px] h-[500px] md:w-[750px] md:h-[750px]
       xl:w-[1283px] xl:h-[1283px] rounded-[50%] left-[calc(70%-641px)] top-[-50vh] absolute bg-[#8EA8DB]/40 blur-[100px] move-fast"
-                ></div>
+        ></div>
 
-                <Typography variants="h1" color="white" className="z-[1000] w-[80%]" center>
-                    Ошибка 404: Страница не найдена
-                </Typography>
-            </main>
-        </div>
-    )
+        <Typography variants="h1" color="white" className="z-[1000] w-[80%]" center>
+          Ошибка 404: Страница не найдена
+        </Typography>
+      </main>
+    </div>
+  )
 }
 
 export default NotFound
