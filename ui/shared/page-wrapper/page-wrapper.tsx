@@ -8,7 +8,7 @@ type PageWrapperProps = {
 function PageWrapper({ children, scroll }: PageWrapperProps) {
   return (
     <div
-      className={`w-full flex justify-center ${scroll ? "p-0 lg:p-[30px] xl:p-[60px]" : "px-[15px] md:px-[30px] xl:px-[60px]"}`}
+      className={`w-full flex justify-center ${scroll ? "p-0 lg:px-8 xl:px-16" : "px-4 md:px-8 xl:px-16"}`}
     >
       <div className="max-w-[1400px] w-full">{children}</div>
     </div>

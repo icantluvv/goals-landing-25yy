@@ -10,7 +10,7 @@ const AskQuestion = () => {
   const { setMessageModalOpen } = useMessageModalStore()
   return (
     <div
-      className="flex-1 bg-gradient-custom rounded-[25px] lg:rounded-[35px] md:min-h-[320px] xl:min-w-[500px] h-[350px] p-[24px] md:p-[48px]
+      className="flex-1 bg-gradient-custom rounded-[25px] lg:rounded-[35px] max-w-[500px] lg:min-h-[320px] xl:min-w-[500px] h-[350px] p-[24px] lg:p-[48px]
          flex flex-col justify-between relative gap-[24px] shadow-md"
     >
       <div className="flex  flex-col gap-y-[12px] w-[60%] select-none z-[1000]">
@@ -37,7 +37,7 @@ const AskQuestion = () => {
       <Image
         src={big_logo}
         alt="big_logo"
-        className="absolute w-[110px] h-[110px] md:w-[130px] md:h-[130px] right-[24px] md:right-[48px] top-[12px] md:top-[36px]"
+        className="absolute w-[110px] h-[110px] lg:w-[130px] lg:h-[130px] right-[24px] lg:right-[48px] top-[12px] lg:top-[36px]"
       />
     </div>
   )

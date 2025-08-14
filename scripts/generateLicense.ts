@@ -22,9 +22,7 @@ export async function extractAndParseLicense(): Promise<LicenseSection[]> {
   const sections: LicenseSection[] = []
   let currentSection: LicenseSection | null = null
 
-  // Функция проверки, что строка — заголовок
   const isTitle = (line: string) => {
-    // Заголовок — строка в верхнем регистре, не слишком длинная
     const isUpperCase = line === line.toUpperCase()
     const isNotLong = line.length > 0 && line.length < 100
     return isUpperCase && isNotLong
@@ -32,22 +30,18 @@ export async function extractAndParseLicense(): Promise<LicenseSection[]> {
 
   for (const line of lines) {
     if (isTitle(line)) {
-      // Начинаем новую секцию
       if (currentSection) {
         sections.push(currentSection)
       }
       currentSection = { title: line, content: [] }
     } else {
-      // Это обычный текст, добавляем в текущую секцию
       if (!currentSection) {
-        // Если секции еще нет, создаём "без заголовка"
         currentSection = { title: "Без заголовка", content: [] }
       }
       currentSection.content.push(line)
     }
   }
 
-  // Добавляем последнюю секцию, если есть
   if (currentSection) {
     sections.push(currentSection)
   }

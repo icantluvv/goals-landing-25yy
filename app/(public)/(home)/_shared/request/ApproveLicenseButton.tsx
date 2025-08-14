@@ -13,7 +13,7 @@ const ApproveLicenseButton = ({ approve, setApprove }: ApproveLicenseButtonProps
   const handleChange = () => setApprove(!approve)
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center my-6 gap-3">
       <CheckBox checked={approve} onChange={handleChange} />
       <Typography className="text-gray-500" variants="p">
         Даю согласие на обработку{" "}

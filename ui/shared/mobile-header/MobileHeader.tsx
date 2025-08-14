@@ -1,13 +1,18 @@
+"use client"
+
 import { useMobileHeaderStore } from "@/store/mobileHeaderStore"
-import MobileNavigation from "./MobileNavigation"
 import { useBodyLock } from "@/hooks/useBodyLockScroll"
 import Button from "@/ui/core/Button/Button"
+import MobileNavigation from "@/ui/shared/mobile-header/MobileNavigation"
 
-type MobileHeaderProps = {
-  navLinks: { id: string; label: string }[]
-}
+const navLinks = [
+  { id: "/", label: "Главная" },
+  // { id: "/clients", label: "Клиентам" },
+  { id: "/blog", label: "Блог" }
+  // { id: "/contacts", label: "Контакты" }
+]
 
-const MobileHeader = ({ navLinks }: MobileHeaderProps) => {
+const MobileHeader = () => {
   const openHeader = useMobileHeaderStore((state) => state.openHeader)
   const setOpenHeader = useMobileHeaderStore((state) => state.setOpenHeader)
 

@@ -1,26 +1,26 @@
-import Image from "next/image"
-import phone from "@/public/phone.png"
 import Typography from "@/ui/core/Typography/Typography"
 import ApplicationRequestErrorModal from "@/app/(public)/(home)/_shared/modals/ApplicationRequestErrorModal"
 import ApplicationInputs from "@/app/(public)/(home)/_shared/request/ApplicationInputs"
+import PageWrapper from "@/ui/shared/page-wrapper/page-wrapper"
+import Image from "next/image"
 
-const Application = () => {
+import phone from "@/public/phone.png"
+
+function Application() {
   return (
-    <>
-      <section
-        id="connect"
-        className="container scroll-mt-[200px] relaive flex flex-col xl:flex-row w-full items-center justify-start xl:gap-[80px] mb-[40px] xl:mb-[80px]"
-      >
-        <form className="flex w-full md:max-w-[70vw] lg:max-w-auto flex-col items-center xl:items-start xl:w-full gap-[24px]">
-          <div className="flex flex-col text-center xl:text-start gap-[6px]">
+    <PageWrapper>
+      <section id="connect" className="scroll-mt-[200px] xl:flex relative mb-8 xl:mb-16">
+        <form className="block md:max-w-full lg:max-w-[80vw] xl:max-w-[60vw]">
+          <div className="block">
             <Typography color="black" variants="h2">
               Оставьте заявку!
             </Typography>
 
-            <Typography color="black" variants="accent">
+            <Typography color="black" className="my-3" variants="accent">
               Мы с вами свяжемся для продолжения регистрации
             </Typography>
           </div>
+
           <ApplicationInputs />
         </form>
 
@@ -29,14 +29,14 @@ const Application = () => {
             src={phone}
             width={358}
             height={728}
-            className="absolute top-[-10rem] right-0"
+            className="absolute top-[0rem] right-0"
             alt="phone"
           />
         </div>
       </section>
 
       <ApplicationRequestErrorModal />
-    </>
+    </PageWrapper>
   )
 }
 

@@ -1,11 +1,8 @@
 import Typography from "@/ui/core/Typography/Typography"
-import Header from "@/app/(public)/(home)/components/Header"
 
 const NotFound = () => {
   return (
     <div className="h-[100svh] bg-gradient-custom flex flex-col items-center relative overflow-hidden">
-      <Header />
-
       <main className="flex items-center justify-center flex-1 ">
         <div
           className="w-[700px] h-[700px] md:w-[1200px] md:h-[1200px]

@@ -4,6 +4,11 @@ import { getStaticMeta } from "@/utils/getStaticMeta"
 import Script from "next/script"
 import Tariffs from "@/ui/feature/home/Tariffs"
 import Steps from "@/ui/feature/home/Steps"
+import Solution from "@/ui/feature/home/Solution"
+import FAQ from "@/ui/feature/home/FAQ"
+import Application from "@/ui/feature/home/Application"
+import MessageModal from "@/app/(public)/(home)/_shared/modals/MessageModal"
+import FirstSection from "@/ui/feature/home/FirstSection"
 
 export const metadata: Metadata = { ...getStaticMeta("/") }
 
@@ -18,14 +23,14 @@ export default function LandingPage() {
         }}
       />
 
-      <div className="flex flex-col min-h-screen items-center relative gap-y-[40px] md:gap-y-[80px] xl:gap-y-[120px]">
-        {/*<FirstSection></FirstSection>*/}
-        {/*<Solution></Solution>*/}
+      <div className="flex flex-col min-h-screen items-center relative gap-y-[40px] md:gap-y-[80px] xl:gap-y-[120px] z-0">
+        <FirstSection />
+        <Solution></Solution>
         <Steps />
         <Tariffs />
-        {/*<FAQ></FAQ>*/}
-        {/*<Application />*/}
-        {/*<MessageModal></MessageModal>*/}
+        <FAQ />
+        <Application />
+        <MessageModal />
       </div>
     </>
   )

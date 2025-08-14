@@ -8,6 +8,7 @@ import axios from "axios"
 import { useApplicationErrorModalStore } from "@/store/ApplicationErrorStore"
 import { applicationSchema } from "@/schemas/applicationSchema"
 import ApproveLicenseButton from "@/app/(public)/(home)/_shared/request/ApproveLicenseButton"
+import clsx from "clsx"
 
 const ApplicationInputs = () => {
   const [form, setForm] = useState({
@@ -91,7 +92,7 @@ const ApplicationInputs = () => {
         />
       </div>
 
-      <div className="flex w-full flex-col gap-[24px]">
+      <div className="block mt-4">
         <Input
           placeholder="ФИО"
           type="text"
@@ -104,14 +105,14 @@ const ApplicationInputs = () => {
           type="text"
           mask="0000000000"
           value={form.orgCode}
-          className={getInputClass("orgCode")}
+          className={clsx(getInputClass("orgCode"), "mt-2")}
           onChange={handleChange("orgCode")}
         />
       </div>
 
       <ApproveLicenseButton setApprove={setApprove} approve={approve} />
 
-      <div className="w-full xl:w-auto flex items-center">
+      <div className="block md:max-w-1/3">
         <Button
           size="default"
           color={approve && !loading ? "black" : "disable"}
