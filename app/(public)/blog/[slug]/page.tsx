@@ -3,7 +3,12 @@ import PageWrapper from "@/ui/shared/page-wrapper/page-wrapper"
 import React from "react"
 import Image from "next/image"
 
-const ArticlePage = ({ params }: { params: { slug: string } }) => {
+interface PageProps {
+  params: Promise<{ slug: string }>
+}
+
+export default async function ArticlePage({ params }: PageProps) {
+  const { slug } = await params
   return (
     <PageWrapper>
       <div className="my-32">
@@ -13,7 +18,7 @@ const ArticlePage = ({ params }: { params: { slug: string } }) => {
           </div>
 
           <Typography className="mt-8" variants={"h1"}>
-            Статья №{params.slug}
+            Статья № {slug}
           </Typography>
           <Typography variants="h2" className="mt-8">
             Заголовок статьи
@@ -29,5 +34,3 @@ const ArticlePage = ({ params }: { params: { slug: string } }) => {
     </PageWrapper>
   )
 }
-
-export default ArticlePage
