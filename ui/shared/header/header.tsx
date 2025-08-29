@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 
 import roundLogo from "@/public/header/round-logo.svg"
+import LinkHeader from "@/ui/shared/link-header/LinkHeader"
 
 const Header = () => {
   return (
@@ -14,10 +15,8 @@ const Header = () => {
         <div className="bg-black/15 h-8 w-[1px]" />
 
         <div className="max-w-[1400px] flex gap-[40px]">
-          <Link href={"/"}>Главная</Link>
-          {/*<Link href={"/clients"}>Клиентам</Link>*/}
-          <Link href={"/blog"}>Блог</Link>
-          {/*<Link href={"/contacts"}>Контакты</Link>*/}
+          <LinkHeader title="Главная" href={"/"} />
+          <LinkHeader title="Блог" href={"/blog"} />
         </div>
       </div>
     </header>
