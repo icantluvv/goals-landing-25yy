@@ -13,7 +13,6 @@ export async function extractAndParseLicense(): Promise<LicenseSection[]> {
 
   const { value: rawText } = await mammoth.extractRawText({ buffer })
 
-  // Разобьем весь текст на строки
   const lines = rawText
     .split("\n")
     .map((line) => line.trim())

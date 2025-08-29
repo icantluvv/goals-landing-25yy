@@ -13,7 +13,6 @@ export async function extractAndParsePrivacy(): Promise<LicenseSection[]> {
 
   const { value: rawText } = await mammoth.extractRawText({ buffer })
 
-  // Разобьем весь текст на строки
   const lines = rawText
     .split("\n")
     .map((line) => line.trim())
@@ -22,35 +21,28 @@ export async function extractAndParsePrivacy(): Promise<LicenseSection[]> {
   const sections: LicenseSection[] = []
   let currentSection: LicenseSection | null = null
 
-  // Функция проверки, что строка — заголовок
   const isTitle = (line: string) => {
     if (line.length === 0 || line.length > 100) return false
     if (line.includes(".") || line.includes(":")) return false // заголовки обычно не с точками
-    // Допустим, если в строке не больше 7 слов и есть заглавная первая буква
     const words = line.split(" ")
     if (words.length > 7) return false
-    // Проверим, что первая буква заглавная — простой признак заголовка
     return /^[А-ЯA-Z]/.test(line)
   }
 
   for (const line of lines) {
     if (isTitle(line)) {
-      // Начинаем новую секцию
       if (currentSection) {
         sections.push(currentSection)
       }
       currentSection = { title: line, content: [] }
     } else {
-      // Это обычный текст, добавляем в текущую секцию
       if (!currentSection) {
-        // Если секции еще нет, создаём "без заголовка"
         currentSection = { title: "Без заголовка", content: [] }
       }
       currentSection.content.push(line)
     }
   }
 
-  // Добавляем последнюю секцию, если есть
   if (currentSection) {
     sections.push(currentSection)
   }
