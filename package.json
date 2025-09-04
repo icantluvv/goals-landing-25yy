@@ -1,50 +1,67 @@
 {
-  "name": "landing",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
-  },
-  "dependencies": {
-    "@hookform/resolvers": "^5.1.1",
-    "clsx": "^2.1.1",
-    "framer-motion": "^12.9.7",
-    "mammoth": "^1.9.1",
-    "nanoid": "^5.1.5",
-    "next": "15.3.1",
-    "nodemailer": "^7.0.5",
-    "prettier": "^3.6.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-hook-form": "^7.60.0",
-    "react-imask": "^7.6.1",
-    "superjson": "^2.2.2",
-    "zod": "^4.0.5",
-    "zustand": "^5.0.4"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@eslint/js": "^9.32.0",
-    "@next/eslint-plugin-next": "^15.4.6",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/nodemailer": "^6.4.17",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@typescript-eslint/eslint-plugin": "^8.39.0",
-    "@typescript-eslint/parser": "^8.39.0",
-    "axios": "^1.10.0",
-    "eslint": "^9.32.0",
-    "eslint-config-next": "15.3.1",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-tailwindcss": "^3.18.2",
-    "tailwindcss": "^4",
-    "typescript": "^5.9.2",
-    "typescript-eslint": "^8.39.0"
-  }
+    "name": "landing",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev --turbopack",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+        "prepare": "husky"
+    },
+    "dependencies": {
+        "@hookform/resolvers": "^5.1.1",
+        "clsx": "^2.1.1",
+        "framer-motion": "^12.9.7",
+        "mammoth": "^1.9.1",
+        "nanoid": "^5.1.5",
+        "next": "15.3.1",
+        "nodemailer": "^7.0.5",
+        "prettier": "^3.6.2",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "react-hook-form": "^7.60.0",
+        "react-imask": "^7.6.1",
+        "superjson": "^2.2.2",
+        "zod": "^4.0.5",
+        "zustand": "^5.0.4"
+    },
+    "devDependencies": {
+        "@eslint/eslintrc": "^3",
+        "@eslint/js": "^9.32.0",
+        "@next/eslint-plugin-next": "^15.4.6",
+        "@tailwindcss/postcss": "^4",
+        "@types/node": "^20",
+        "@types/nodemailer": "^6.4.17",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "@typescript-eslint/eslint-plugin": "^8.39.0",
+        "@typescript-eslint/parser": "^8.39.0",
+        "axios": "^1.10.0",
+        "eslint": "^9.32.0",
+        "eslint-config-next": "15.3.1",
+        "eslint-plugin-import": "^2.32.0",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-tailwindcss": "^3.18.2",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.1.6",
+        "tailwindcss": "^4",
+        "typescript": "^5.9.2",
+        "typescript-eslint": "^8.39.0"
+    },
+    "lint-staged": {
+        "*.{ts,tsx,js,jsx}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{json,md,css}": [
+            "prettier --write"
+        ]
+    },
+    "overrides": {
+        "eslint-plugin-tailwindcss": {
+            "tailwindcss": "$tailwindcss"
+        }
+    }
 }
