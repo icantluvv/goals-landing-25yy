@@ -1,1 +1,4 @@
 npx lint-staged
+echo "🔍 Checking TypeScript types..."
+npm run type-check
+echo "✅ All checks passed!"
