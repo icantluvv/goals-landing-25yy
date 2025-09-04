@@ -1,31 +1,33 @@
 import Typography from "@/ui/core/Typography/Typography"
 import clsx from "clsx"
-import Link from "next/link"
 import React from "react"
+import DefaultLink from "@/ui/core/Link/default-link"
 
 type Links = {
-  title: string
-  href: string
+    title: string
+    href: string
 }
 
 type LinksGroupProps = {
-  className?: string
-  title: string
-  items: Links[]
+    className?: string
+    title: string
+    items: Links[]
 }
 
 const LinksGroup = ({ title, items, className }: LinksGroupProps) => (
-  <div className={clsx("flex flex-col gap-4", className)}>
-    <Typography variants="h6">{title}</Typography>
+    <div className={clsx("flex flex-col gap-6", className)}>
+        <Typography variants="div" className="font-semibold text-black text-base">
+            {title}
+        </Typography>
 
-    <div className="flex flex-col gap-3">
-      {items.map(({ title, href }) => (
-        <Link key={title} href={href} className="hover:scale-105">
-          <Typography variants="p">{title}</Typography>
-        </Link>
-      ))}
+        <div className="flex flex-col gap-3">
+            {items.map(({ title, href }) => (
+                <DefaultLink type="text" key={title} href={href}>
+                    {title}
+                </DefaultLink>
+            ))}
+        </div>
     </div>
-  </div>
 )
 
 export default LinksGroup
