@@ -1,5 +1,3 @@
-import React from "react"
-
 import { extractAndParseLicense } from "@/scripts/generateLicense"
 import Typography from "@/ui/core/Typography/Typography"
 import Script from "next/script"
@@ -7,66 +5,43 @@ import superjson from "superjson"
 import { PageSchema } from "@/constants/constants"
 import { Metadata } from "next"
 import { getStaticMeta } from "@/utils/getStaticMeta"
+import PageWrapper from "@/ui/shared/page-wrapper/page-wrapper"
+import RulesItem from "@/ui/feature/privacy/RulesItem"
 
 export const metadata: Metadata = { ...getStaticMeta("/license") }
 
 export default async function LicensePage() {
-  const licenseContent = await extractAndParseLicense()
+    const licenseContent = await extractAndParseLicense()
 
-  return (
-    <>
-      <Script
-        id="breadcrumb-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(superjson.serialize(PageSchema).json)
-        }}
-      />
+    return (
+        <>
+            <Script
+                id="breadcrumb-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(superjson.serialize(PageSchema).json)
+                }}
+            />
+            <PageWrapper>
+                <div className="flex flex-col gap-10 my-32">
+                    <Typography variants="p">
+                        ВАЖНО! Перед началом любого использования указанных ниже Программ для ЭВМ
+                        внимательно ознакомьтесь с условиями ее использования, содержащимися в
+                        настоящем Соглашении. Установка, запуск или иное начало использования
+                        Программы означает надлежащее заключение настоящего Соглашения и Ваше полное
+                        согласие со всеми его условиями. Если Вы не согласны безоговорочно принять
+                        условия настоящего Соглашения, Вы не имеете права использовать Программу.
+                    </Typography>
 
-      <div className="flex flex-col w-full items-center">
-        <main className="min-h-screen flex flex-col px-[5vw] lg:px-[15vw] py-[150px] gap-[40px]">
-          <p className="text-[0.75rem]">
-            ВАЖНО! Перед началом любого использования указанных ниже Программ для ЭВМ внимательно
-            ознакомьтесь с условиями ее использования, содержащимися в настоящем Соглашении.
-            Установка, запуск или иное начало использования Программы означает надлежащее заключение
-            настоящего Соглашения и Ваше полное согласие со всеми его условиями. Если Вы не согласны
-            безоговорочно принять условия настоящего Соглашения, Вы не имеете права использовать
-            Программу.
-          </p>
+                    <Typography variants="h1">ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ</Typography>
 
-          <Typography variants="h2">ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ</Typography>
+                    <Typography variants="p">
+                        Данное Лицензионное соглашение применяется к Программе для ЭВМ: «Goals»
+                    </Typography>
 
-          <p className="text-[1rem]">
-            Данное Лицензионное соглашение применяется к Программе для ЭВМ: «Goals»
-          </p>
-
-          {licenseContent.map((section, idx) => (
-            <section key={idx} className="flex flex-col gap-4">
-              <Typography variants="h3" color="black">
-                {section.title}
-              </Typography>
-
-              <div className="flex flex-col gap-3">
-                {section.content.map((line, i) => {
-                  if (/^\d+\./.test(line)) {
-                    return (
-                      <p key={i} className="text-[18px] font-medium text-black leading-[1.4] mt-6">
-                        {line}
-                      </p>
-                    )
-                  } else {
-                    return (
-                      <p key={i} className="text-[16px] font-normal text-black leading-[1.4]">
-                        {line}
-                      </p>
-                    )
-                  }
-                })}
-              </div>
-            </section>
-          ))}
-        </main>
-      </div>
-    </>
-  )
+                    <RulesItem licenseContent={licenseContent} />
+                </div>
+            </PageWrapper>
+        </>
+    )
 }
