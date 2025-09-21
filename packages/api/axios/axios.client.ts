@@ -21,6 +21,9 @@ class ApiClient {
             }
         })
     }
+    getInstance(): AxiosInstance {
+        return this.instance
+    }
 }
 
 const apiClient = new ApiClient()
