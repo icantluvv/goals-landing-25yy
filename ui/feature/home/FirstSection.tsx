@@ -9,10 +9,7 @@ import GradientBackground from "@/app/(public)/(home)/_shared/hero/GradientBackg
 
 const FirstSection = () => {
     return (
-        <section
-            id="about"
-            className=" w-full h-[100svh] px-[15px] lg:h-[100svh] flex flex-col relative overflow-hidden items-center lg:pt-[100px] scroll-mt-[100px]"
-        >
+        <section className=" w-full h-[100svh] px-[15px] lg:h-[100svh] flex flex-col relative overflow-hidden items-center lg:pt-[100px] scroll-mt-[100px]">
             <GradientBackground />
             <BackgroundCircles />
 
