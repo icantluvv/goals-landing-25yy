@@ -73,7 +73,44 @@ a {
     }
 }
 
+@layer base {
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: #def24a transparent;
+    }
+
+    html::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    html::-webkit-scrollbar-track {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    html::-webkit-scrollbar-thumb {
+        background-color: #def24a;
+        border-radius: 16px;
+    }
+
+    html::-webkit-scrollbar-thumb:hover {
+        background-color: #c5e000;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        scrollbar-color: #737373 transparent;
+    }
+    html::-webkit-scrollbar-thumb {
+        background-color: #737373;
+    }
+}
+
+
 @layer utilities {
+
     .no-scrollbar {
         -ms-overflow-style: none; /* IE и Edge */
         scrollbar-width: none; /* Firefox */
