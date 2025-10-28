@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "required": ["slug", "title"],
+    "properties": {
+        "slug": { "type": "string", "title": "Slug" },
+        "title": { "type": "string", "title": "Title" },
+        "summary": { "anyOf": [{ "type": "string" }, { "type": "null" }], "title": "Summary" },
+        "image": {
+            "anyOf": [{ "type": "string", "format": "binary" }, { "type": "null" }],
+            "title": "Image"
+        }
+    },
+    "x-readme-ref-name": "ArticleSummarySchema"
+}

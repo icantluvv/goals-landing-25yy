@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "required": ["slug", "title", "content_html", "headings"],
+    "properties": {
+        "slug": { "type": "string", "title": "Slug" },
+        "title": { "type": "string", "title": "Title" },
+        "summary": { "anyOf": [{ "type": "string" }, { "type": "null" }], "title": "Summary" },
+        "image": {
+            "anyOf": [{ "type": "string", "format": "binary" }, { "type": "null" }],
+            "title": "Image"
+        },
+        "content_html": { "type": "string", "title": "Content Html" },
+        "headings": {
+            "type": "array",
+            "title": "Headings",
+            "items": {
+                "type": "object",
+                "required": ["level", "id", "text"],
+                "properties": {
+                    "level": { "type": "integer", "title": "Level" },
+                    "id": { "type": "string", "title": "Id" },
+                    "text": { "type": "string", "title": "Text" }
+                },
+                "x-readme-ref-name": "HeadingSchema"
+            }
+        }
+    },
+    "x-readme-ref-name": "ArticleSchema"
+}

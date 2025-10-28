@@ -4,12 +4,13 @@ import Script from "next/script"
 import { PageSchema } from "@/constants/constants"
 import { Metadata } from "next"
 import { getStaticMeta } from "@/utils/getStaticMeta"
-import { articles } from "@/app/(public)/blog/constants"
 import ArticlesArray from "@/ui/feature/blog/ArticlesArray"
+import { listArticlesBlogApiArticlesGet } from "@/packages/api/codegen"
 
 export const metadata: Metadata = { ...getStaticMeta("/blog") }
 
-const BlogPage = () => {
+const BlogPage = async () => {
+    const articles = await listArticlesBlogApiArticlesGet()
     return (
         <>
             <Script
