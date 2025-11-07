@@ -5,7 +5,8 @@
 For start development server run this commands:
 
 ```bash
-npm ci
+npm install
+cp env_example .env
 npm run dev
 ```
 
@@ -16,4 +17,3 @@ Running server opens at [http://localhost:3000](http://localhost:3000) url
 1. Next.JS 15
 2. Zustand
 3. Tailwind v4
-

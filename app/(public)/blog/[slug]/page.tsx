@@ -22,10 +22,10 @@ export default async function ArticlePage({ params }: PageProps) {
                     <div className="w-full h-52 sm:h-72 md:h-80 xl:h-96 relative border rounded-xl">
                         <Image
                             fill
-                            src={article.image || ""}
+                            src={"/"}
                             alt=""
                             unoptimized
-                            className="object-cover"
+                            className="object-cover rounded-xl"
                         />
                     </div>
 

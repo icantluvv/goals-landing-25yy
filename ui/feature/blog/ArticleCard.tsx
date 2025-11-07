@@ -14,7 +14,7 @@ function ArticleCard({ article }: ArticleCardProps) {
             href={`/blog/${article.slug}`}
         >
             <div className="relative bg-PrimaryBlack/5 rounded-lg min-h-[168px] sm:min-h-[200px] xl:min-h-[240px] group-hover:shadow-md transition-shadow duration-300">
-                <Image src={article.image || ""} alt="image-article" fill />
+                <Image src={"/"} alt="image-article" fill />
             </div>
 
             <div className="mt-3 md:mt-4 group-hover:text-GreenActive transition-colors duration-300">

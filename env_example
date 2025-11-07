@@ -5,3 +5,6 @@ SMTP_PASSWORD=Do-goals2525
 SMTP_FROM_EMAIL=info@do-goals.ru
 
 NEXT_PUBLIC_FRONT_URL=https://do-goals.online
+NEXT_PUBLIC_API_URL=https://do-goals.online
+
+BASE_API_HOST=https://do-goals.online
