@@ -10,7 +10,7 @@ const navLinks = [
     { id: "/#points", label: "Цель" },
     { id: "/#tariffs", label: "Тарифы" },
     { id: "/#faq", label: "FAQ" },
-    { id: "/#application", label: "Главная" },
+    { id: "/#application", label: "Подключить" },
     { id: "/blog", label: "Блог" }
 ]
 

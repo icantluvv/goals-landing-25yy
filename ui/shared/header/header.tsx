@@ -4,7 +4,6 @@ import roundLogo from "@/public/header/round-logo.svg"
 import LinkHeader from "@/ui/shared/link-header/LinkHeader"
 import DefaultLink from "@/ui/core/Link/default-link"
 
-const isBlogReady = false
 const Header = () => {
     return (
         <header className="fixed hidden top-5 w-full lg:flex justify-center gap-[24px] min-h-[80px] items-center z-[9999]">
@@ -20,8 +19,8 @@ const Header = () => {
                     <LinkHeader title="Цель" href={"/#points"} />
                     <LinkHeader title="Тарифы" href={"/#tariffs"} />
                     <LinkHeader title="FAQ" href={"/#faq"} />
-                    <LinkHeader title="Заявка" href={"/#application"} />
-                    {isBlogReady && <LinkHeader title="Блог" href={"/blog"} />}
+                    <LinkHeader title="Подключить" href={"/#application"} />
+                    <LinkHeader title="Блог" href={"/blog"} />
                 </div>
             </div>
         </header>
