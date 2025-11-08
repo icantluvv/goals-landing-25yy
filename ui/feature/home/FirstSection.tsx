@@ -33,7 +33,7 @@ const FirstSection = () => {
                 </div>
 
                 <div className="flex flex-col lg:flex-row gap-4">
-                    <Link href="/#connect">
+                    <Link href="/#application">
                         <Button size="default" type="button" color="darkBlue" variant="primary">
                             <Typography color="white" variants="button">
                                 Подключить
@@ -41,7 +41,7 @@ const FirstSection = () => {
                         </Button>
                     </Link>
 
-                    <Link href="/#forbusiness">
+                    <Link href="/#points">
                         <Button variant="primary" size="default" color="white">
                             <Typography className="text-darkBlue" variants="button">
                                 Как это работает?
