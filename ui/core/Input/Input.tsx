@@ -13,7 +13,7 @@ type InputProps = {
 }
 
 const Input = ({ placeholder, className, type, mask, value = "", onChange }: InputProps) => {
-    const inputClassNames = `w-full px-1.5 py-3 border-b placeholder:text-gray-500 placeholder:font-poppins border-PrimaryBlack/25 focus:outline-none ${className}`
+    const inputClassNames = `w-full px-3 py-3 border-b placeholder:text-gray-500 placeholder:font-poppins border-PrimaryBlack/25 focus:outline-none ${className}`
 
     if (mask) {
         return (
