@@ -15,7 +15,6 @@ export const tariffs = [
     },
     {
         id: 2,
-
         title: "Продвинутый",
         price: "7 999₽",
         subtext: "в месяц за 3 заведения",
@@ -30,7 +29,6 @@ export const tariffs = [
     },
     {
         id: 3,
-
         title: "Максимальный",
         price: "9 999₽",
         subtext: "в месяц за 4 заведения",
