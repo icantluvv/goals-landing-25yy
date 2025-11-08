@@ -35,7 +35,9 @@ const Footer = () => (
 
                 <div className="flex items-center gap-3 mt-4">
                     {socialLinks.map(({ icon, alt, url }, i) => (
-                        <Link
+                        <a
+                            rel={"noopener noreferrer nofollow"}
+                            target={"_blank"}
                             href={url}
                             key={i}
                             className="inline-flex w-[18px] h-[18px] md:w-[22px] md:h-[22px] xl:w-[25px] xl:h-[25px] relative"
@@ -46,7 +48,7 @@ const Footer = () => (
                                 fill
                                 className="opacity-50 hover:opacity-100 transition-opacity"
                             />
-                        </Link>
+                        </a>
                     ))}
                 </div>
             </div>
