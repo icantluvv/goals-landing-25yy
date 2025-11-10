@@ -9,7 +9,7 @@ export const articleSummarySchemaSchema = z.object({
     slug: z.string(),
     title: z.string(),
     summary: z.union([z.string(), z.null()]).optional(),
-    image: z.string().nullable().optional()
+    image_path: z.string().nullable().optional()
 })
 
 export type ArticleSummarySchemaSchema = z.infer<typeof articleSummarySchemaSchema>

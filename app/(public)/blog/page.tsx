@@ -11,6 +11,9 @@ export const metadata: Metadata = { ...getStaticMeta("/blog") }
 
 const BlogPage = async () => {
     const articles = await listArticlesBlogApiArticlesGet()
+
+    console.log("articles", articles)
+
     return (
         <>
             <Script

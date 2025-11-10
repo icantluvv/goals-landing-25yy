@@ -20,13 +20,19 @@ export default async function ArticlePage({ params }: PageProps) {
             <div className="my-32">
                 <div className="w-full lg:max-w-[60vw] xl:w-[45vw] xl:max-w-[800px]">
                     <div className="w-full h-52 sm:h-72 md:h-80 xl:h-96 relative border rounded-xl">
-                        <Image
-                            fill
-                            src={"/"}
-                            alt=""
-                            unoptimized
-                            className="object-cover rounded-xl"
-                        />
+                        {article.image_path && (
+                            <Image
+                                fill
+                                src={
+                                    process.env.NEXT_PUBLIC_BASE_API_HOST! +
+                                    process.env.NEXT_PUBLIC_BASE_IMAGE_URL! +
+                                    article.image_path
+                                }
+                                alt=""
+                                quality={100}
+                                className="object-cover rounded-xl"
+                            />
+                        )}
                     </div>
 
                     <div className="mt-8 prose max-w-none">{parse(sanitizedContent)}</div>

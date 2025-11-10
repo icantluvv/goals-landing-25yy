@@ -10,7 +10,7 @@ export const articleSchemaSchema = z.object({
     slug: z.string(),
     title: z.string(),
     summary: z.union([z.string(), z.null()]).optional(),
-    image: z.string().nullable().optional(),
+    image_path: z.string().nullable().optional(),
     content_html: z.string(),
     headings: z.array(z.lazy(() => headingSchemaSchema))
 })

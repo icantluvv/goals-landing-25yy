@@ -13,5 +13,5 @@ export type ArticleSummarySchema = {
      */
     title: string
     summary?: string | null
-    image?: string | null
+    image_path?: string | null
 }

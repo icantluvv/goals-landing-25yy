@@ -1,4 +1,5 @@
 import axios, { type AxiosError, type AxiosRequestConfig, type AxiosResponse } from "axios"
+import { isServer } from "@/packages/api/utils"
 
 export type RequestConfig<TData = unknown> = {
     data?: TData
@@ -20,7 +21,7 @@ export type ResponseConfig<TData = unknown> = {
 }
 
 export const axiosInstance = axios.create({
-    baseURL: process.env.BASE_API_HOST as string,
+    baseURL: isServer ? process.env.BASE_API_HOST! : process.env.NEXT_PUBLIC_BASE_API_HOST,
     withCredentials: true
 })
 
