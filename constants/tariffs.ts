@@ -1,6 +1,7 @@
 export const tariffs = [
     {
         id: 1,
+        icon: "/images/svg/start.svg",
         title: "Базовый",
         price: "5 999₽",
         subtext: "в месяц за 2 заведения",
@@ -15,6 +16,7 @@ export const tariffs = [
     },
     {
         id: 2,
+        icon: "/images/svg/pro.svg",
         title: "Продвинутый",
         price: "7 999₽",
         subtext: "в месяц за 3 заведения",
@@ -29,6 +31,7 @@ export const tariffs = [
     },
     {
         id: 3,
+        icon: "/images/svg/max.svg",
         title: "Максимальный",
         price: "9 999₽",
         subtext: "в месяц за 4 заведения",

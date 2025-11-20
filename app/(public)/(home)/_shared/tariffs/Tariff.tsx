@@ -2,9 +2,10 @@ import Typography from "@/ui/core/Typography/Typography"
 import TariffFeature from "./TariffFeature"
 import Link from "next/link"
 import Button from "@/ui/core/Button/Button"
-
+import Image from "next/image"
 type Tariff = {
     id: number
+    icon: string
     price: string
     title: string
     description: string
@@ -22,10 +23,21 @@ const Tariff = ({ tariff }: TariffProps) => {
             key={tariff.id}
             className="relative min-h-[200px] md:min-h-[350px] xl:min-h-[450px] flex flex-col bg-darkBlue/5 p-4 lg:p-6 xl:p-8 rounded-[24px]"
         >
-            <Typography variants={"h5"}>{tariff.title}</Typography>
+            <div className={"flex w-full justify-between"}>
+                <Typography variants={"h5"}>{tariff.title}</Typography>
+                <Image
+                    className="w-6 h-6 md:w-10 md:h-10 "
+                    src={tariff.icon}
+                    alt={tariff.price}
+                    width={64}
+                    height={64}
+                />
+            </div>
+
             <Typography className="mt-1" variants={"h6"}>
                 {tariff.price}
             </Typography>
+
             <Typography className="text-Purple text-[16px] mt-2" variants="p">
                 {tariff.subtext}
             </Typography>
