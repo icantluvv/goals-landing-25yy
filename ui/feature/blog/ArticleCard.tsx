@@ -33,11 +33,15 @@ function ArticleCard({ article }: ArticleCardProps) {
             </div>
 
             <div className="mt-3 md:mt-4 group-hover:text-GreenActive transition-colors duration-300">
-                <Typography variants="h6">{article.title}</Typography>
+                <Typography variants="h6" className={"line-clamp-2"}>
+                    {article.title}
+                </Typography>
             </div>
 
             <div className="mt-2">
-                <Typography variants="p">{article.summary}</Typography>
+                <Typography variants="p" className={"line-clamp-3"}>
+                    {article.summary}
+                </Typography>
             </div>
         </Link>
     )

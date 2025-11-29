@@ -19,7 +19,7 @@ export default async function ArticlePage({ params }: PageProps) {
         <PageWrapper>
             <div className="my-32">
                 <div className="w-full lg:max-w-[60vw] xl:w-[45vw] xl:max-w-[800px]">
-                    <div className="w-full h-52 sm:h-72 md:h-80 xl:h-96 relative border rounded-xl">
+                    <div className="w-full h-52 sm:h-72 md:h-80 xl:h-96 relative  rounded-xl">
                         {article.image_path && (
                             <Image
                                 fill
