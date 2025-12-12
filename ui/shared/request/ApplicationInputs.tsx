@@ -7,7 +7,7 @@ import Typography from "@/ui/core/Typography/Typography"
 import axios from "axios"
 import { useApplicationErrorModalStore } from "@/store/ApplicationErrorStore"
 import { applicationSchema } from "@/schemas/applicationSchema"
-import ApproveLicenseButton from "@/app/(public)/(home)/_shared/request/ApproveLicenseButton"
+import ApproveLicenseButton from "@/ui/shared/request/ApproveLicenseButton"
 import clsx from "clsx"
 
 const ApplicationInputs = () => {

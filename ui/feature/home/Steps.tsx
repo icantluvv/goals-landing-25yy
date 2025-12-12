@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Typography from "@/ui/core/Typography/Typography"
-import Step from "../../../app/(public)/(home)/_shared/steps/Step"
-import AnalysisButton from "../../../app/(public)/(home)/_shared/steps/AnalysisButton"
+import Step from "@/ui/shared/steps/Step"
+import AnalysisButton from "@/ui/shared/steps/AnalysisButton"
 import PageWrapper from "@/ui/shared/page-wrapper/page-wrapper"
 
 import trend from "@/public/trend.svg"

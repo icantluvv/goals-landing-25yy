@@ -57,7 +57,7 @@ const Tariff = ({ tariff }: TariffProps) => {
                 ))}
             </ul>
 
-            <Link href="/#application" className="mt-4 xl:mt-8">
+            <Link href="/public#application" className="mt-4 xl:mt-8">
                 <Button variant="primary" size="default" color="darkBlue">
                     <Typography color="white" variants="button">
                         Подключить

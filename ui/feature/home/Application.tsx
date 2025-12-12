@@ -1,10 +1,7 @@
 import Typography from "@/ui/core/Typography/Typography"
-import ApplicationRequestErrorModal from "@/app/(public)/(home)/_shared/modals/ApplicationRequestErrorModal"
-import ApplicationInputs from "@/app/(public)/(home)/_shared/request/ApplicationInputs"
+import ApplicationRequestErrorModal from "@/ui/shared/modals/ApplicationRequestErrorModal"
+import ApplicationInputs from "@/ui/shared/request/ApplicationInputs"
 import PageWrapper from "@/ui/shared/page-wrapper/page-wrapper"
-import Image from "next/image"
-
-import phone from "@/public/phone.png"
 
 function Application() {
     return (
@@ -23,16 +20,6 @@ function Application() {
 
                     <ApplicationInputs />
                 </form>
-
-                <div className="hidden xl:flex w-1/2 justify-center relative">
-                    <Image
-                        src={phone}
-                        width={358}
-                        height={728}
-                        className="absolute top-[0rem] right-0"
-                        alt="phone"
-                    />
-                </div>
             </section>
 
             <ApplicationRequestErrorModal />

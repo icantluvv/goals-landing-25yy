@@ -1,5 +1,5 @@
 import Typography from "@/ui/core/Typography/Typography"
-import Tariff from "../../../app/(public)/(home)/_shared/tariffs/Tariff"
+import Tariff from "@/ui/shared/tariffs/Tariff"
 import PageWrapper from "@/ui/shared/page-wrapper/page-wrapper"
 
 import { tariffs } from "@/constants/tariffs"

@@ -4,8 +4,8 @@ import goals from "@/public/first/GOALS.png"
 import Link from "next/link"
 import Typography from "@/ui/core/Typography/Typography"
 import Button from "@/ui/core/Button/Button"
-import BackgroundCircles from "@/app/(public)/(home)/_shared/hero/BackgroundCircles"
-import GradientBackground from "@/app/(public)/(home)/_shared/hero/GradientBackground"
+import BackgroundCircles from "@/ui/shared/hero/BackgroundCircles"
+import GradientBackground from "@/ui/shared/hero/GradientBackground"
 
 const FirstSection = () => {
     return (

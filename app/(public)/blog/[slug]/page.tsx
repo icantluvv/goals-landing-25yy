@@ -5,6 +5,7 @@ import { getArticleBlogApiArticlesSlugGet } from "@/packages/api/codegen"
 
 import parse from "html-react-parser"
 import { sanitizeHtmlContent } from "@/utils/sanitizeHtmlContent"
+import ShareBlock from "@/ui/feature/ShareBlock"
 
 interface PageProps {
     params: Promise<{ slug: string }>
@@ -36,6 +37,10 @@ export default async function ArticlePage({ params }: PageProps) {
                     </div>
 
                     <div className="mt-8 prose max-w-none">{parse(sanitizedContent)}</div>
+
+                    <div className={"mt-14"}>
+                        <ShareBlock />
+                    </div>
                 </div>
             </div>
         </PageWrapper>

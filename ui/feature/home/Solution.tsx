@@ -1,6 +1,6 @@
 import { solutionsData } from "@/constants/solutionsData"
 import Typography from "@/ui/core/Typography/Typography"
-import Feature from "@/app/(public)/(home)/_shared/solution/Feature"
+import Feature from "@/ui/shared/solution/Feature"
 import PageWrapper from "@/ui/shared/page-wrapper/page-wrapper"
 
 const Solution = () => (

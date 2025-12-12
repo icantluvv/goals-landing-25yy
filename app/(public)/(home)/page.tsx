@@ -7,31 +7,34 @@ import Steps from "@/ui/feature/home/Steps"
 import Solution from "@/ui/feature/home/Solution"
 import FAQ from "@/ui/feature/home/FAQ"
 import Application from "@/ui/feature/home/Application"
-import MessageModal from "@/app/(public)/(home)/_shared/modals/MessageModal"
+import MessageModal from "@/ui/shared/modals/MessageModal"
 import FirstSection from "@/ui/feature/home/FirstSection"
+import Slider from "@/ui/shared/slider"
 
 export const metadata: Metadata = { ...getStaticMeta("/") }
 
 export default function LandingPage() {
-  return (
-    <>
-      <Script
-        id="breadcrumb-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(PageSchema)
-        }}
-      />
+    const featureSlider = process.env.FEATURE_SLIDER === "true"
+    return (
+        <>
+            <Script
+                id="breadcrumb-jsonld"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(PageSchema)
+                }}
+            />
 
-      <div className="flex flex-col min-h-screen items-center relative gap-y-[40px] md:gap-y-[80px] xl:gap-y-[120px] z-0">
-        <FirstSection />
-        <Solution></Solution>
-        <Steps />
-        <Tariffs />
-        <FAQ />
-        <Application />
-        <MessageModal />
-      </div>
-    </>
-  )
+            <div className="flex flex-col min-h-screen items-center relative gap-y-[40px] md:gap-y-[80px] xl:gap-y-[120px] z-0">
+                <FirstSection />
+                <Solution></Solution>
+                <Steps />
+                {featureSlider && <Slider />}
+                <Tariffs />
+                <FAQ />
+                <Application />
+                <MessageModal />
+            </div>
+        </>
+    )
 }

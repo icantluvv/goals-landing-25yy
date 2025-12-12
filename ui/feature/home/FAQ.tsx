@@ -1,6 +1,6 @@
 import { faqData } from "@/constants/faqData"
-import AskQuestion from "../../../app/(public)/(home)/_shared/faq/AskQuestion"
-import AccordionItem from "@/app/(public)/(home)/_shared/faq/AccordionItem"
+import AskQuestion from "@/ui/shared/faq/AskQuestion"
+import AccordionItem from "@/ui/shared/faq/AccordionItem"
 import PageWrapper from "@/ui/shared/page-wrapper/page-wrapper"
 
 const FAQ = () => {
