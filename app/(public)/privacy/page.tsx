@@ -1,7 +1,7 @@
 import { extractAndParsePrivacy } from "@/scripts/generatePrivacy"
 import Script from "next/script"
 import superjson from "superjson"
-import { PageSchema } from "@/constants/constants"
+import { PageSchema } from "@/constants/mocks"
 import { Metadata } from "next"
 import { getStaticMeta } from "@/utils/getStaticMeta"
 import Typography from "@/ui/core/Typography/Typography"

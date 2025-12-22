@@ -2,7 +2,7 @@
 
 import { useMobileHeaderStore } from "@/store/mobileHeaderStore"
 import { useBodyLock } from "@/hooks/useBodyLockScroll"
-import Button from "@/ui/core/Button/Button"
+import { Button } from "@/ui/core/Button"
 import MobileNavigation from "@/ui/shared/mobile-header/MobileNavigation"
 
 const navLinks = [
@@ -33,7 +33,6 @@ const MobileHeader = () => {
                     <Button
                         onClick={handleOpenHeader}
                         type="button"
-                        variant="primary"
                         className="w-[54px] h-[54px] flex flex-col items-center justify-center gap-[8px] relative"
                     >
                         <div

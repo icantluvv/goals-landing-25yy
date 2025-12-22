@@ -1,7 +1,8 @@
-import { faqData } from "@/constants/faqData"
+import { faqData } from "@/constants/mocks"
 import AskQuestion from "@/ui/shared/faq/AskQuestion"
 import AccordionItem from "@/ui/shared/faq/AccordionItem"
 import PageWrapper from "@/ui/shared/page-wrapper/page-wrapper"
+import CreateApplicationBlock from "@/ui/shared/CreateApplicationBlock"
 
 const FAQ = () => {
     return (
@@ -16,6 +17,10 @@ const FAQ = () => {
                     ))}
                 </ul>
                 <AskQuestion />
+            </section>
+
+            <section className={"mt-12"}>
+                <CreateApplicationBlock />
             </section>
         </PageWrapper>
     )

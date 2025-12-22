@@ -2,7 +2,7 @@ import Typography from "@/ui/core/Typography/Typography"
 import Tariff from "@/ui/shared/tariffs/Tariff"
 import PageWrapper from "@/ui/shared/page-wrapper/page-wrapper"
 
-import { tariffs } from "@/constants/tariffs"
+import { tariffs } from "@/constants/mocks"
 
 const Tariffs = () => {
     return (
@@ -19,10 +19,10 @@ const Tariffs = () => {
                         className="px-[10vw] mt-[24px] text-gray-600"
                         variants="accent"
                     >
-                        Учитывайте количество открытых заведений, текущие задачи и этапы развития
-                        вашего бизнеса. Выберите тариф, который соответствует вашим целям —
-                        от базового тестирования инструментов до масштабной работы с аудиторией
-                        и продвинутой аналитики.
+                        Учитывайте количество открытых заведений, текущие задачи и этапы развития
+                        вашего бизнеса. Выберите тариф, который соответствует вашим целям — от
+                        базового тестирования инструментов до масштабной работы с аудиторией и
+                        продвинутой аналитики.
                     </Typography>
                 </div>
 

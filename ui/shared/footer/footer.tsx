@@ -5,12 +5,12 @@ import copyright from "@/public/copyright.svg"
 import header_logo from "@/public/header/header_logo.svg"
 
 import Typography from "@/ui/core/Typography/Typography"
-import { links, rightLinks, socialLinks } from "@/constants/footer-links"
+import { links, rightLinks, socialLinks } from "@/constants/mocks"
 import LinksGroup from "./links-group"
 import PageWrapper from "@/ui/shared/page-wrapper/page-wrapper"
 
 const Footer = () => (
-    <footer className="w-full relative z-[5000] block justify-center bg-white py-10 border-t border-PrimaryBlack/10">
+    <footer className="w-full relative z-10 block justify-center bg-white py-10 border-t border-PrimaryBlack/10">
         <PageWrapper>
             <Link href="/public" className="inline-flex">
                 <Image src={header_logo} alt="footer_logo" className="w-auto h-[50px]" />

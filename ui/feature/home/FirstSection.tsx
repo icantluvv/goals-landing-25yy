@@ -1,9 +1,8 @@
 import Image from "next/image"
-import dark_arrow from "@/public/dark_arrow.svg"
 import goals from "@/public/first/GOALS.png"
 import Link from "next/link"
 import Typography from "@/ui/core/Typography/Typography"
-import Button from "@/ui/core/Button/Button"
+import { Button } from "@/ui/core/Button"
 import BackgroundCircles from "@/ui/shared/hero/BackgroundCircles"
 import GradientBackground from "@/ui/shared/hero/GradientBackground"
 
@@ -33,8 +32,8 @@ const FirstSection = () => {
                 </div>
 
                 <div className="flex flex-col lg:flex-row gap-4">
-                    <Link href="/#application">
-                        <Button size="default" type="button" color="darkBlue" variant="primary">
+                    <Link href="/#tariffs">
+                        <Button componentType={"default"} size="large" type="button">
                             <Typography color="white" variants="button">
                                 Подключить
                             </Typography>
@@ -42,11 +41,10 @@ const FirstSection = () => {
                     </Link>
 
                     <Link href="/#points">
-                        <Button variant="primary" size="default" color="white">
+                        <Button componentType={"white"} size="large">
                             <Typography className="text-darkBlue" variants="button">
                                 Как это работает?
                             </Typography>
-                            <Image width={24} height={24} src={dark_arrow} alt="arrow"></Image>
                         </Button>
                     </Link>
                 </div>

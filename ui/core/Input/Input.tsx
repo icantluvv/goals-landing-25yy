@@ -25,7 +25,7 @@ const Input = ({
     onChange,
     onClick
 }: InputProps) => {
-    const inputClassNames = `w-full px-3 py-3 border-b placeholder:text-gray-500 placeholder:font-poppins border-PrimaryBlack/25 focus:outline-none `
+    const inputClassNames = `w-full border-lightGray border p-3 border-b rounded-xs placeholder:text-gray-500 border placeholder:font-poppins border-PrimaryBlack/25 focus:outline-none md:max-w-[296px]`
 
     if (mask) {
         return (
@@ -35,7 +35,7 @@ const Input = ({
                 onChange={(val) =>
                     onChange?.({ target: { value: val } } as ChangeEvent<HTMLInputElement>)
                 }
-                className={className}
+                className={clsx(inputClassNames, className)}
                 placeholder={placeholder ? placeholder : ""}
             />
         )

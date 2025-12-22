@@ -1,14 +1,15 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
 import Input from "@/ui/core/Input/Input"
-import Button from "@/ui/core/Button/Button"
+import { Button } from "@/ui/core/Button"
 import Typography from "@/ui/core/Typography/Typography"
 import axios from "axios"
 import { useApplicationErrorModalStore } from "@/store/ApplicationErrorStore"
 import { applicationSchema } from "@/schemas/applicationSchema"
-import ApproveLicenseButton from "@/ui/shared/request/ApproveLicenseButton"
 import clsx from "clsx"
+import Link from "next/link"
+import { useApplicationModel } from "@/context/application-model-context"
 
 const ApplicationInputs = () => {
     const [form, setForm] = useState({
@@ -19,20 +20,22 @@ const ApplicationInputs = () => {
     })
 
     const [errors, setErrors] = useState<Record<string, boolean>>({})
-    const [approve, setApprove] = useState(false)
     const [loading, setLoading] = useState(false)
 
+    const { setOpenApplicationModel } = useApplicationModel()
     const { addModal } = useApplicationErrorModalStore()
 
     const handleChange = (key: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement>) => {
         setForm({ ...form, [key]: e.target.value })
     }
 
+    function handleCloseModal() {
+        setOpenApplicationModel(false)
+    }
+
     const getInputClass = (field: string) => (errors[field] ? "border-red-500" : "")
 
     const handleSubmit = async () => {
-        if (!approve) return
-
         const result = applicationSchema.safeParse({
             phone: form.phone,
             email: form.email,
@@ -74,7 +77,7 @@ const ApplicationInputs = () => {
 
     return (
         <>
-            <div className="flex w-full gap-[48px]">
+            <div className="flex flex-col w-full gap-4 lg:gap-6">
                 <Input
                     placeholder="Телефон"
                     type="text"
@@ -90,9 +93,7 @@ const ApplicationInputs = () => {
                     className={getInputClass("email")}
                     onChange={handleChange("email")}
                 />
-            </div>
 
-            <div className="block mt-4">
                 <Input
                     placeholder="Как к вам обращаться?"
                     type="text"
@@ -105,25 +106,46 @@ const ApplicationInputs = () => {
                     type="text"
                     mask="0000000000"
                     value={form.orgCode}
-                    className={clsx(getInputClass("orgCode"), "mt-2")}
+                    className={clsx(getInputClass("orgCode"))}
                     onChange={handleChange("orgCode")}
                 />
             </div>
 
-            <ApproveLicenseButton setApprove={setApprove} approve={approve} />
+            <div className={"flex flex-col md:flex-row mt-8 md:mt-12 gap-4 md:gap-6"}>
+                <div className="block md:max-w-1/3">
+                    <Button
+                        size="large"
+                        onClick={!loading ? handleSubmit : undefined}
+                        disabled={loading}
+                    >
+                        <Typography color="white" variants="button">
+                            Отправить
+                        </Typography>
+                    </Button>
+                </div>
 
-            <div className="block md:max-w-1/3">
-                <Button
-                    size="default"
-                    color={approve && !loading ? "black" : "disable"}
-                    variant={approve && !loading ? "primary" : "disabled"}
-                    onClick={approve && !loading ? handleSubmit : undefined}
-                    disabled={!approve || loading}
+                <Typography
+                    className={"max-w-[400px] lg:max-w-[600px]"}
+                    color={"black"}
+                    variants="p"
                 >
-                    <Typography color="white" variants="button">
-                        Отправить
-                    </Typography>
-                </Button>
+                    Нажимая на кнопку, вы даете согласие на обработку{" "}
+                    <Link
+                        onClick={handleCloseModal}
+                        href="/license"
+                        className="text-brandGreen hover:border-b"
+                    >
+                        персональных данных
+                    </Link>{" "}
+                    и соглашаетесь с{" "}
+                    <Link
+                        onClick={handleCloseModal}
+                        href={"/privacy"}
+                        className="text-brandGreen hover:border-b"
+                    >
+                        политикой конфиденциальности.
+                    </Link>
+                </Typography>
             </div>
         </>
     )

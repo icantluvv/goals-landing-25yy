@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState, ReactNode } from "react"
-import { PictureSlidesType } from "@/constants/constants"
+import React, { createContext, ReactNode, useContext, useState } from "react"
+import { PictureSlidesType } from "@/constants/mocks"
 
 interface SliderContextType {
     currentSlide: number

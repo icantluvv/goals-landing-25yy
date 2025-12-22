@@ -1,9 +1,20 @@
+"use client"
+
 import React from "react"
+import { useApplicationModel } from "@/context/application-model-context"
 
 const TryButton = () => {
+    const { setOpenApplicationModel } = useApplicationModel()
+
+    function handleOpenApplicationModal() {
+        setOpenApplicationModel(true)
+    }
+
     return (
-        <button className="px-4 py-2 bg-darkBlue rounded-full text-white font-medium text-base">
-            Попробовать бесплатно
+        <button onClick={handleOpenApplicationModal}>
+            <p className={"opacity-70 hover:opacity-100 transition-opacity duration-300"}>
+                Подключить
+            </p>
         </button>
     )
 }

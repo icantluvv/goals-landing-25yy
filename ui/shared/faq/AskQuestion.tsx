@@ -4,7 +4,7 @@ import Image from "next/image"
 import big_logo from "@/public/big_logo.svg"
 import { useMessageModalStore } from "@/store/messageModalStore"
 import Typography from "@/ui/core/Typography/Typography"
-import Button from "@/ui/core/Button/Button"
+import { Button } from "@/ui/core/Button"
 
 const AskQuestion = () => {
     const { setMessageModalOpen } = useMessageModalStore()
@@ -15,22 +15,17 @@ const AskQuestion = () => {
         >
             <div className="flex  flex-col gap-y-[12px] w-[60%] select-none z-[1000]">
                 <Typography color="white" variants="h5">
-                    Напишите нам!
+                    Напишите нам!
                 </Typography>
 
                 <Typography color="white" variants="p">
-                    Вы можете задать свой вопрос нам лично! Отправьте письмо, а мы постараемся
+                    Вы можете задать свой вопрос нам лично! Отправьте письмо, а мы постараемся
                     ответить
                 </Typography>
             </div>
 
             <div className="w-full z-[1000] flex">
-                <Button
-                    onClick={() => setMessageModalOpen()}
-                    variant="primary"
-                    color="white"
-                    size="default"
-                >
+                <Button componentType={"white"} onClick={() => setMessageModalOpen()} size="large">
                     <Typography variants={"button"}>Задать вопрос в Goals</Typography>
                 </Button>
             </div>

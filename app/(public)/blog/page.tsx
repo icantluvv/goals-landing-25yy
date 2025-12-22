@@ -1,7 +1,7 @@
 import PageWrapper from "@/ui/shared/page-wrapper/page-wrapper"
 import Typography from "@/ui/core/Typography/Typography"
 import Script from "next/script"
-import { PageSchema } from "@/constants/constants"
+import { PageSchema } from "@/constants/mocks"
 import { Metadata } from "next"
 import { getStaticMeta } from "@/utils/getStaticMeta"
 import ArticlesArray from "@/ui/feature/blog/ArticlesArray"

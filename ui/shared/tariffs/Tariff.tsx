@@ -1,8 +1,8 @@
 import Typography from "@/ui/core/Typography/Typography"
 import TariffFeature from "./TariffFeature"
-import Link from "next/link"
-import Button from "@/ui/core/Button/Button"
 import Image from "next/image"
+import BuyButton from "@/ui/shared/tariffs/buy-button"
+
 type Tariff = {
     id: number
     icon: string
@@ -57,13 +57,7 @@ const Tariff = ({ tariff }: TariffProps) => {
                 ))}
             </ul>
 
-            <Link href="/public#application" className="mt-4 xl:mt-8">
-                <Button variant="primary" size="default" color="darkBlue">
-                    <Typography color="white" variants="button">
-                        Подключить
-                    </Typography>
-                </Button>
-            </Link>
+            <BuyButton />
         </li>
     )
 }

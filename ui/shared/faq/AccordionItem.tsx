@@ -4,7 +4,6 @@ import { useAccordionStore } from "@/store/accordionStore"
 import Image from "next/image"
 import hide_show from "@/public/hide_show.svg"
 import Typography from "@/ui/core/Typography/Typography"
-import Button from "@/ui/core/Button/Button"
 
 const AccordionItem = ({
     id,
@@ -29,7 +28,7 @@ const AccordionItem = ({
                 isOpen ? "gap-y-[24px]" : "gap-y-0"
             } transition-all duration-300 select-none`}
         >
-            <Button className="flex items-center justify-between cursor-pointer" size="custom">
+            <button className="flex items-center justify-between cursor-pointer">
                 <Typography color="black" className="text-start w-full" variants="button">
                     {question}
                 </Typography>
@@ -40,7 +39,7 @@ const AccordionItem = ({
                         isOpen ? "rotate-45" : "rotate-0"
                     } transition-transform duration-200 w-[24px] h-[24px] md:w-[32x] md:h-[32px] cursor-pointer`}
                 />
-            </Button>
+            </button>
 
             <div
                 className={`${

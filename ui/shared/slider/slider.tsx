@@ -4,7 +4,7 @@ import React from "react"
 import { SliderProvider } from "@/context/slider-context"
 import { SliderButtons } from "@/ui/shared/slider/slider-buttons"
 import SliderContainer from "@/ui/shared/slider/slider-container"
-import { PictureSlides } from "@/constants/constants"
+import { PictureSlides } from "@/constants/mocks"
 
 function Slider() {
     return (

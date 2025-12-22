@@ -2,6 +2,9 @@ import "@/globals.css"
 import { inter, montserrat } from "@/public/fonts/fonts"
 import DefaultLayout from "@/ui/shared/default-layout/default-layout"
 import { Metadata } from "next"
+import ApplicationModel from "@/ui/shared/ApplicationModel"
+import { ApplicationModelProvider } from "@/context/application-model-context"
+import MessageModal from "@/ui/shared/modals/MessageModal"
 
 export const metadata: Metadata = {
     icons: {
@@ -19,7 +22,11 @@ export default function RootLayout({
     return (
         <html lang="ru" className={`${inter.variable} ${montserrat.variable} `}>
             <body>
-                <DefaultLayout>{children}</DefaultLayout>
+                <ApplicationModelProvider>
+                    <DefaultLayout>{children}</DefaultLayout>
+                    <ApplicationModel />
+                    <MessageModal />
+                </ApplicationModelProvider>
             </body>
         </html>
     )

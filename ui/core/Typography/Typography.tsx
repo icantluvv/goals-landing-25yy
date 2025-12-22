@@ -23,7 +23,7 @@ const variantsTypography = {
         h5: "text-[18px] lg:text-[32px] leading-[123%] font-bold font-inter",
         h6: "text-[16px] lg:text-xl leading-[123%] font-bold font-inter",
         accent: "text-[16px] md:text-[18px] lg:text-2xl font-poppins",
-        p: "text-xs lg:text-base font-poppins ",
+        p: "text-xs lg:text-base font-poppins",
         button: "text-base lg:text-xl font-poppins font-semibold",
         custom: "font-poppins",
         div: ""
