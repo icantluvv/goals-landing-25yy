@@ -1,4 +1,4 @@
-л# Goals — Landing Page
+# Goals — Landing Page
 
 > Official landing page for **Goals**, a customer loyalty & marketing platform built for restaurants and local businesses.
 
