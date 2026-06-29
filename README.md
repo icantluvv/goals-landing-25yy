@@ -75,10 +75,18 @@ app/
   api/
     contact/      # Application form endpoint
     send-message/ # Message form endpoint
-ui/
-  core/           # Base UI components (Button, Input, Typography…)
-  feature/        # Domain components (Tariffs, FAQ, ApplicationForm…)
-  shared/         # Layout components (Header, Footer, Modals…)
+src/
+  ui/
+    core/         # Base UI components (Button, Input, Typography…)
+    feature/      # Domain components (Tariffs, FAQ, ApplicationForm…)
+    shared/       # Layout components (Header, Footer, Modals…)
+  constants/      # Static data and mock content
+  context/        # React context providers
+  hooks/          # Custom React hooks
+  lib/            # Static assets and data files
+  schemas/        # Zod validation schemas
+  scripts/        # Document generation scripts
+  utils/          # Utility functions
 ```
 
 ---
